@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
+import './style/special.scss'
 
-export default class special extends Component {
+class special extends Component {
     render() {
         return (
-            <div>
-
-            </div>
+            <section>专题</section>
         )
     }
 }
+
+export default special

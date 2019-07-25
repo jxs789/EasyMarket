@@ -3,9 +3,7 @@ import React, { Component } from 'react'
 export default class shoppingCar extends Component {
     render() {
         return (
-            <div>
-
-            </div>
+            <section>购物车</section>
         )
     }
 }
