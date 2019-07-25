@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Home from './page/home';
+
+import Classify from "./page/classify"
 import {
     Route,
     BrowserRouter as Router,
@@ -12,8 +14,7 @@ class App extends Component {
         return (
             <Router>
                 <Switch>
-                    <Home />
-
+                    <Route path='/' component={Home} />
                 </Switch>
             </Router>
         )
