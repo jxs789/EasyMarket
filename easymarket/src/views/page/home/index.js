@@ -1,17 +1,14 @@
 import React, { Component } from 'react'
-import Footer from '../../components/footer';
-import Page from './page'
-import Special from './special'
-import Classify from './classify'
-import ShoppingCar from './shoppingCar'
-import My from './my'
-
-import './style/home.scss'
+import Footer from '../../../components/footer';
+import Page from '../pages'
+import Special from '../special'
+import Classify from '../classify'
+import ShoppingCar from '../shoppingCar'
+import My from '../my'
+import "./index.scss"
 import { Route, Redirect } from "react-router-dom";
-
 class Home extends Component {
     render() {
-
         return (
             <div className='wrap'>
                 <Route path="/home/page" component={Page} />
