@@ -3,10 +3,7 @@ import Footer from '../../components/footer';
 class Classify extends Component {
     render() {
         return (
-            <div>
-                1
-                <Footer />
-            </div>
+            <section>分类</section>
         )
     }
 }

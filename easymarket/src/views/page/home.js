@@ -1,18 +1,26 @@
-import React, { Component } from 'react';
-import {
-    Route,
-} from "react-router-dom";
-import My from "./page/my";
-import page from "./page";
-import ShoppingCar from "./shoppingCar";
+import React, { Component } from 'react'
 import Footer from '../../components/footer';
-// import { inject, observer } from "mobx-react"
+import Page from './page'
+import Special from './special'
+import Classify from './classify'
+import ShoppingCar from './shoppingCar'
+import My from './my'
+
+import './style/home.scss'
+import { Route, Redirect } from "react-router-dom";
+
 class Home extends Component {
     render() {
 
         return (
-            <div>
-                <Route path="/home/page" />
+            <div className='wrap'>
+                <Route path="/home/page" component={Page} />
+                <Route path="/home/special" component={Special} />
+                <Route path="/home/classify" component={Classify} />
+                <Route path="/home/shoppingCar" component={ShoppingCar} />
+                <Route path="/home/my" component={My} />
+                <Redirect from='/home' to='/home/page' />
+                <Footer />
             </div>
         )
     }
