@@ -44,7 +44,7 @@ const route = [
         }]
     }, {
         from: '/',
-        to: '/home'
+        to: '/login'
     }]
 
 export default route
