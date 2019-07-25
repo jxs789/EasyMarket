@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './style/special.scss'
+import "./index.scss"
 
 class special extends Component {
     render() {

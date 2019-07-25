@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-
-export default class shoppingCar extends Component {
+class ShoppingCar extends Component {
     render() {
         return (
             <section>购物车</section>
         )
     }
 }
+export default ShoppingCar

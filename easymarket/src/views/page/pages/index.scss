@@ -1,0 +1,38 @@
+.box{
+ .imgBox{
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    .slide {
+    width: 100%;
+    height: 4rem;
+     img {
+    width: 100%;
+    height: 100%;
+    }
+}
+}
+}
+.goods_category{
+    width: 100%;
+    height:0.86rem;
+    background: #ffffff;
+    margin-bottom: 0.1rem;
+    display: flex;
+    // justify-content: space-around;
+    li{
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+     margin-bottom: 0.15rem;
+        text-align: center;
+    }
+}
+.brandTitle{
+    height:1rem;
+    background: #ffffff;
+    line-height: 1rem;
+    text-align: center;
+}
+
+
