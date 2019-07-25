@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import Footer from '../../components/footer'
-import { MapRouter } from '../../router/index'
+import Footer from '../../../components/footer'
+import { MapRouter } from '../../../router/index'
 
-import './style/home.scss'
+import './index.scss'
 
 class Home extends Component {
     render() {

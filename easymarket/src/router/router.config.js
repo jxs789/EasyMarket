@@ -1,5 +1,5 @@
 import Home from '../views/page/home'
-import Page from '../views/page/page'
+import Page from '../views/page/pages'
 import Special from '../views/page/special'
 import Classify from '../views/page/classify'
 import ShoppingCar from '../views/page/shoppingCar'
