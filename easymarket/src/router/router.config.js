@@ -6,11 +6,16 @@ import ShoppingCar from '../views/page/shoppingCar'
 import My from '../views/page/my'
 import Login from '../views/page/login'
 import SpecialDetail from '../views/page/special/specialDetail'
+import ChannelClassity from '../views/page/pages/channelClassify'
 
 const route = [
     {
         path: '/specialDetail/:id',
         component: SpecialDetail,
+    },
+    {
+        path: '/channelClassify/:id',
+        component: ChannelClassity,
     },
     {
         path: '/login',
