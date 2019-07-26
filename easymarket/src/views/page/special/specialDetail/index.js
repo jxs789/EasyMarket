@@ -22,7 +22,7 @@ class index extends Component {
         return (
             <div className='wrap'>
                 <Header {...this.props} data={data} />
-                <section>
+                <section className="bColor">
                     <div dangerouslySetInnerHTML={{ __html: detailData.content }} className="topical_detail_main"></div>
                     <ul className='message'>
                         <li><p>精选留言</p><NavLink to='/addMessage'>⚙</NavLink></li>
