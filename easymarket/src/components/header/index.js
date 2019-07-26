@@ -7,11 +7,11 @@ class index extends Component {
         this.state = {};
     }
     render() {
-
+let data=this.props.data;
         return (
             <header>
                 <p onClick={() => this.gotoBack()}>&lt;</p>
-                <p>{this.props.location.state.params.title}</p>
+                <p>{data}</p>
                 <p></p>
             </header>
         );

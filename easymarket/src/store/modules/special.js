@@ -1,14 +1,16 @@
-import { getSpecial, getDetail,getComment } from '../../services/index'
+import { getSpecial, getDetail, getComment, getRelated } from '../../services/index'
 import { observable, action } from 'mobx'
 
 class Special {
     @observable specialData
     @observable detailData
     @observable commentData
+    @observable relatedData
     constructor() {
         this.specialData = []
         this.detailData = []
         this.commentData = []
+        this.relatedData =[]
     }
     //专题
     @action get_special() {
@@ -23,10 +25,17 @@ class Special {
         })
     }
     //专题详情评论
-    @action get_Comment(valueId,typeId) {
-        getComment(valueId,typeId).then(res => {
+    @action get_Comment(valueId, typeId, page, size) {
+        getComment(valueId, typeId, page, size).then(res => {
             console.log(res)
-            // this.detailData = res.data
+            this.commentData = res.data.data
+        })
+    }
+    //相关专题
+    @action get_Related(id) {
+        getRelated(id).then(res => {
+            // console.log(res)
+            this.relatedData = res.data
         })
     }
 }

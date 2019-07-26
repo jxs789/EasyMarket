@@ -1,0 +1,19 @@
+.anonym {
+    box-sizing: border-box;
+    padding: 0 0.2rem;
+    li {
+      height: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      span {
+        color: #666;
+        font-size: 0.25rem;
+      }
+    }
+    li:nth-child(2) {
+      margin-bottom: 0.1rem;
+      color: #666;
+      border-bottom: 0.01rem solid #ccc;
+    }
+  }

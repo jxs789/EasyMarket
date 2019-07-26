@@ -6,8 +6,18 @@ import ShoppingCar from '../views/page/shoppingCar'
 import My from '../views/page/my'
 import Login from '../views/page/login'
 import SpecialDetail from '../views/page/special/specialDetail'
+import More from '../views/page/special/more'
+import AddMessage from '../views/page/special/addMessage'
 
 const route = [
+    {
+        path: '/addMessage',
+        component: AddMessage,
+    },
+    {
+        path: '/more/:id',
+        component: More,
+    },
     {
         path: '/specialDetail/:id',
         component: SpecialDetail,
