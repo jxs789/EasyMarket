@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { NavLink } from "react-router-dom";
 import "./index.scss"
+
 class Footer extends Component {
     render() {
         return (
-            <footer>
+            <div className='footer'>
                 {
                     this.props.route.map(item => item.path ? (
                         <NavLink key={item.path} to={item.path} activeClassName='active'>
@@ -13,7 +14,7 @@ class Footer extends Component {
                         </NavLink>
                     ) : null)
                 }
-            </footer>
+            </div>
         )
     }
 }

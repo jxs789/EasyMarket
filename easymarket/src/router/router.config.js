@@ -5,8 +5,13 @@ import Classify from '../views/page/classify'
 import ShoppingCar from '../views/page/shoppingCar'
 import My from '../views/page/my'
 import Login from '../views/page/login'
+import SpecialDetail from '../views/page/special/specialDetail'
 
 const route = [
+    {
+        path: '/specialDetail/:id',
+        component: SpecialDetail,
+    },
     {
         path: '/login',
         component: Login,
