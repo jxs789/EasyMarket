@@ -1,4 +1,4 @@
-import { getSpecial, getDetail, getComment, getRelated } from '../../services/index'
+import { getSpecial, getDetail, getComment, getRelated, addMessage } from '../../services/index'
 import { observable, action } from 'mobx'
 
 class Special {
@@ -10,7 +10,7 @@ class Special {
         this.specialData = []
         this.detailData = []
         this.commentData = []
-        this.relatedData =[]
+        this.relatedData = []
     }
     //专题
     @action get_special() {
@@ -36,6 +36,12 @@ class Special {
         getRelated(id).then(res => {
             // console.log(res)
             this.relatedData = res.data
+        })
+    }
+    @action add_Message(obj) {
+        // console.log(obj)
+        addMessage({obj}).then(res => {
+            console.log(res)
         })
     }
 }

@@ -16,7 +16,6 @@ class index extends Component {
                 <section>
                     <Comments {...this.props} commentData={commentData} />
                 </section>
-
             </div>
         );
     }

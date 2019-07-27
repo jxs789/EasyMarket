@@ -12,7 +12,7 @@ import AddMessage from '../views/page/special/addMessage'
 
 const route = [
     {
-        path: '/addMessage',
+        path: '/addMessage/:id',
         component: AddMessage,
     },
     {

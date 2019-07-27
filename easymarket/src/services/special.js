@@ -15,3 +15,8 @@ export function getComment(valueId, typeId, page, size) {
 export function getRelated(id) {
     return request.get('/topic/related',{ params: { id } });
 }
+//添加留言
+export function addMessage({obj}) {
+    // console.log(obj)
+    return request.post('comment/post',obj);
+}
