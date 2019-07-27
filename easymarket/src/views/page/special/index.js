@@ -13,7 +13,7 @@ class special extends Component {
         //详情页调用
         let arr = recommend || specialData;
         return (
-            <section>{
+            <section className='special'>{
                 arr.map(item => (
                     <dl key={item.id} onClick={() => this.gotoDetail(item.id, item.title)}>
                         <dt><img src={item.scene_pic_url} alt="" /></dt>

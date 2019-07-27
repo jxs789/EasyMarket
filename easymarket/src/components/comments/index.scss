@@ -1,8 +1,9 @@
 .anonym {
     box-sizing: border-box;
     padding: 0 0.2rem;
+    background: #fff;
     li {
-      height: 0.8rem;
+      // height: 0.8rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -11,9 +12,13 @@
         font-size: 0.25rem;
       }
     }
+    li:nth-child(1) {
+      line-height: 0.6rem;
+      
+    }
     li:nth-child(2) {
-      margin-bottom: 0.1rem;
       color: #666;
+      line-height: 0.6rem;
       border-bottom: 0.01rem solid #ccc;
     }
   }

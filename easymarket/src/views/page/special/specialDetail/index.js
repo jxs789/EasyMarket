@@ -22,13 +22,13 @@ class index extends Component {
         return (
             <div className='wrap'>
                 <Header {...this.props} data={data} />
-                <section>
+                <section className='specialdetail'>
                     <div dangerouslySetInnerHTML={{ __html: detailData.content }} className="topical_detail_main"></div>
                     <ul className='message'>
-                        <li><p>精选留言</p><NavLink to='/addMessage'>⚙</NavLink></li>
+                        <li><p>精选留言</p><NavLink to={`/addMessage/${this.props.match.params.id}`}>⚙</NavLink></li>
                     </ul>
                     <Comments {...this.props} commentData={commentData} />
-                    <div className='more'><NavLink to={`/more/${this.props.match.params.id}`} >查看更多</NavLink></div>
+                    <div className='more'><NavLink to={`/more/${this.props.match.params.id}`} >查看更多评论</NavLink></div>
                     <div className='recommend'>推荐专题</div>
                     <div className='special'>
                         <Special {...this.props} recommend={relatedData} />
