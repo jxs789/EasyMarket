@@ -13,10 +13,16 @@ class page extends Component {
     }
     componentDidMount() {
         this.props.pages.getpages_data();
+    }
+    componentDidUpdate() {
         new Swiper(this.refs.swiper, {
+            slidesPerView: 1.2,
+            spaceBetween: 10,
+            centeredSlides: true,
+            loop: true,
             autoplay: {
-                // delay: 1000,//1秒切换一次
-                // disableOnInteraction: false,  //用户操作之后依然可以autoplay
+                delay: 1000,//1秒切换一次
+                disableOnInteraction: false,  //用户操作之后依然可以autoplay
             },
             observer: true, //当siper内容改变后，从新计算宽高      没有这个会出现无法拖动的情况     //猪儿，好好敲，我回班了
             observeParents: true,//当siper父盒子改变后，从新计算宽高  因为父盒子一般都不是用数据渲染的，这条一般不用加  
