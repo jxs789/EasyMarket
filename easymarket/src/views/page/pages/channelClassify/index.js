@@ -39,7 +39,6 @@ class ChannelClassify extends Component {
     componentDidMount() {
         const { match: { params: { id } } } = this.props
         this.props.pages.getChannel_data(id)
-        console.log(this.refs.goodsLisBox)
         new BS(this.refs.goodsListBox, {
             probeType: 3
         })

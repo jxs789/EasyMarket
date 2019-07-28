@@ -1,14 +1,16 @@
 import { observable, action } from "mobx";
-import { getPage, getClassifyCommodity, getGoodList } from "../../services/index"
+import { getPage, getClassifyCommodity, getGoodList, getBrandDetail } from "../../services/index"
 //修饰   操作
 export default class Pages {
     @observable pageData;
     @observable channelData;
     @observable goodlistData;
+    @observable brandDetail;
     constructor() {
         this.pageData = []
         this.channelData = []
         this.goodlistData = []
+        this.brandDetail = []
     }
     //获取首页数据
     @action async getpages_data() {
@@ -25,6 +27,10 @@ export default class Pages {
         //console.log(categoryId, page, size)
         let data = await getGoodList({ categoryId, page, size })
         this.goodlistData = data.data.goodsList
+    }
+    @action async getBrandDetail_data(id) {
+        let data = await getBrandDetail(id)
+        this.brandDetail = data.data.brand;
     }
 
 }

@@ -23,7 +23,6 @@ body,
 
 .wrap {
   display: flex;
-  background: #f5f5f9;
 }
 
 .wrap section {
@@ -31,5 +30,4 @@ body,
   flex: 1;
   overflow-y: auto;
   flex-direction: column;
-  background: #f5f5f9;
 }

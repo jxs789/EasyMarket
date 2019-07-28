@@ -3,7 +3,12 @@ import "./index.scss";
 import Swipers from "../../../components/swiper"
 import { inject, observer } from "mobx-react";
 import 'swiper/dist/css/swiper.min.css'
+import BrandCont from "../../../components/brandCont/"
 import Swiper from 'swiper'
+import NewGoods from '../../../components/newGoods';
+import HotGoods from "../../../components//hotGoods/"
+import TopGoods from "../../../components//topGoods/";
+import CateGoryCont from "../../../components/cateGoryCont/"
 @inject("pages") //注入模块
 @observer   //监听
 class page extends Component {
@@ -12,7 +17,6 @@ class page extends Component {
         this.state = {};
     }
     componentDidMount() {
-        this.props.pages.getpages_data();
         new Swiper(this.refs.swiper, {
             autoplay: {
                 // delay: 1000,//1秒切换一次
@@ -21,6 +25,9 @@ class page extends Component {
             observer: true, //当siper内容改变后，从新计算宽高      没有这个会出现无法拖动的情况     //猪儿，好好敲，我回班了
             observeParents: true,//当siper父盒子改变后，从新计算宽高  因为父盒子一般都不是用数据渲染的，这条一般不用加  
         })
+    }
+    componentDidMount() {
+        this.props.pages.getpages_data();
     }
     change = (id) => {
         this.props.history.push(`/channelClassify/${id}`)
@@ -35,10 +42,8 @@ class page extends Component {
                         channel && channel.map((item) => {
                             return (
                                 <li key={item.id} onClick={() => this.change(item.id)}>
-                                    {/* <a href=""> */}
                                     <img className="iconImg" src={item.icon_url} alt="" />
                                     <p>{item.name}</p>
-                                    {/* </a> */}
                                 </li>
                             )
                         })
@@ -50,13 +55,7 @@ class page extends Component {
                         {
                             brandList && brandList.map((item) => {
                                 return (
-                                    <a className="brandItem" key={item.id}>
-                                        <div className="brandItemlt">
-                                            <div className="brandItemName">{item.name}</div>
-                                            <div className="brandItemMinPrice">{item.floor_price}元起</div>
-                                        </div>
-                                        <img className="imgLazyload" src={item.new_pic_url} alt="imgLazyLoad" />
-                                    </a>
+                                    <BrandCont  {...this.props} item={item} key={item.id} />
                                 )
                             })
                         }
@@ -67,11 +66,7 @@ class page extends Component {
                     <div className="newGoodsWrap">
                         {newGoodsList && newGoodsList.map((item) => {
                             return (
-                                <a className="newGoodsItem" key={item.id}>
-                                    <img className="imgLazyload" src={item.list_pic_url} alt="imgLazyLoad" />
-                                    <div className="newGoodsName">{item.name}</div>
-                                    <div className="newGoodsPrice">￥{item.retail_price}</div>
-                                </a>
+                                <NewGoods  {...this.props} key={item.id} item={item} />
                             )
                         })
 
@@ -85,14 +80,7 @@ class page extends Component {
                         {
                             hotGoodsList && hotGoodsList.map((item) => {
                                 return (
-                                    <a className="hotGoodsItem" key={item.id}>
-                                        <img className="imgLazyload" src={item.list_pic_url} alt="imgLazyLoad" />
-                                        <div className="hotGoodsInfos">
-                                            <div className="hotGoodsName">{item.name}</div>
-                                            <div className="hotGoodsInfo">{item.goods_brief}</div>
-                                            <div className="hotGoodsPrice">￥{item.retail_price}</div>
-                                        </div>
-                                    </a>
+                                    <HotGoods  {...this.props} key={item.id} item={item} />
                                 )
                             })
                         }
@@ -106,13 +94,7 @@ class page extends Component {
                                 {
                                     topicList && topicList.map((item) => {
                                         return (
-                                            <div className="slide swiper-slide" key={item.id}>
-                                                <a className="topGoodsItem">
-                                                    <img className="imgLazyload" src={item.item_pic_url} alt="imgLazyLoad" />
-                                                    <div className="topGoodSubTitle">{item.title} <span className="topGoodPrice">￥{item.price_info}元起</span></div>
-                                                    <div className="topGoodsTitle">{item.subtitle}</div>
-                                                </a>
-                                            </div>
+                                            <TopGoods  {...this.props} key={item.id} item={item}></TopGoods>
                                         )
                                     })
                                 }
@@ -129,13 +111,7 @@ class page extends Component {
                                     {
                                         <div className='cateGoryGoodsWrap' key={item.id}>
                                             {item.goodsList.map((val) => (
-                                                <a tag="div" key={val.id}>
-                                                    <div className='goodsItemImg'>
-                                                        <img src={val.list_pic_url} alt="" />
-                                                    </div>
-                                                    <div className='goodsItemName'>{val.name}</div>
-                                                    <div className='goodsItemPrice'>￥{val.retail_price}</div>
-                                                </a>
+                                                <CateGoryCont key={val.id} val={val} />
                                             ))}
                                             <a className="categoryMoreGoods">
                                                 {/* href="#/categorys/1005000" */}

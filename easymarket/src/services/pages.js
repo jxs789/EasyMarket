@@ -11,3 +11,7 @@ export function getClassifyCommodity(id) {
 export function getGoodList({ categoryId, page, size }) {
     return request.get("/goods/list", { params: { categoryId, page, size } })
 }
+//根据制造商ID获取制造商详情
+export function getBrandDetail(id) {
+    return request.get("/brand/detail", { params: { id } })
+}
