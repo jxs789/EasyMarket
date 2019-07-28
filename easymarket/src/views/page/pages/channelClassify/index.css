@@ -23,51 +23,60 @@
   font-size: 0.28rem;
 }
 
-.wrap section .categoryDetail {
+.wrap section .goodsListBox {
+  flex: 1;
+  margin-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  overflow: hidden;
+}
+
+.wrap section .goodsListBox .categoryDetail {
   padding: 0.2rem 0;
   margin-top: 0.64rem;
 }
 
-.wrap section .categoryDetail > div {
+.wrap section .goodsListBox .categoryDetail > div {
   height: 0.6rem;
   line-height: 0.6rem;
   text-align: center;
 }
 
-.wrap section .categoryDetail > div:nth-child(2) {
+.wrap section .goodsListBox .categoryDetail > div:nth-child(2) {
   color: gray;
   height: 0.5rem;
   line-height: 0.5rem;
   font-size: 0.28rem;
 }
 
-.wrap section .goodsList {
+.wrap section .goodsListBox .goodsList {
   width: auto;
   height: auto;
   display: flex;
   flex-wrap: wrap;
 }
 
-.wrap section .goodsList .goodsItem {
+.wrap section .goodsListBox .goodsList .goodsItem {
   width: 50%;
+  flex-shrink: 0;
   background: white;
   height: auto;
   padding: 0.2rem;
   position: relative;
 }
 
-.wrap section .goodsList .goodsItem .goodsItemImg {
+.wrap section .goodsListBox .goodsList .goodsItem .goodsItemImg {
   width: 100%;
   min-height: 2rem;
   height: auto;
 }
 
-.wrap section .goodsList .goodsItem .goodsItemImg img {
+.wrap section .goodsListBox .goodsList .goodsItem .goodsItemImg img {
   width: 100%;
   height: auto;
 }
 
-.wrap section .goodsList .goodsItem .goodsItemName {
+.wrap section .goodsListBox .goodsList .goodsItem .goodsItemName {
+  width: 100%;
   text-align: center;
   font-size: 0.28rem;
   overflow: hidden;
@@ -77,7 +86,7 @@
   padding-top: 0.1rem;
 }
 
-.wrap section .goodsList .goodsItem .goodsItemPrice {
+.wrap section .goodsListBox .goodsList .goodsItem .goodsItemPrice {
   text-align: center;
   font-size: 0.28rem;
   overflow: hidden;
@@ -86,7 +95,7 @@
   color: red;
 }
 
-.wrap section .goodsList .goodsItem:nth-child(2n + 1):after {
+.wrap section .goodsListBox .goodsList .goodsItem:nth-child(2n + 1):after {
   content: "";
   position: absolute;
   top: 0;
@@ -101,7 +110,7 @@
   transform-origin: left top;
 }
 
-.wrap section .goodsList .goodsItem:nth-child(2n):after {
+.wrap section .goodsListBox .goodsList .goodsItem:nth-child(2n):after {
   content: "";
   position: absolute;
   top: 0;
@@ -113,4 +122,13 @@
   height: 200%;
   transform: scale(0.5);
   transform-origin: left top;
+}
+
+.channelClassifyBox {
+  display: flex;
+}
+
+.goodsListBox {
+  flex: 1;
+  overflow: hidden;
 }

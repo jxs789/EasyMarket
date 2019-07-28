@@ -1,6 +1,20 @@
+import React, { Component } from 'react'
+import { inject, observer } from "mobx-react"
+@inject("pages")
+@observer
+class GoodList extends Component {
+    componentDidMount() {
 
-{/* <a className="goodsItem">
-                            <div className="goodsItemImg">
-                                <img className="imgLazyload loadEnd" src="http://yanxuan.nosdn.127.net/1f67b1970ee20fd572b7202da0ff705d.png" alt="imgLazyLoad" />
-                            </div><div className="goodsItemName">母亲节礼物-舒适安睡组合</div><div className="goodsItemPrice">￥2598元</div></a>
-                        <a className="goodsItem"> */}
+    }
+    render() {
+        let { list_pic_url, name, retail_price } = this.props
+        return (
+            <a className="goodsItem">
+                <div className="goodsItemImg">
+                    <img className="imgLazyload loadEnd" src={list_pic_url} alt="imgLazyLoad" />
+                </div><div className="goodsItemName">{name}</div><div className="goodsItemPrice">￥{retail_price}元</div></a>
+        )
+
+    }
+}
+export default GoodList;

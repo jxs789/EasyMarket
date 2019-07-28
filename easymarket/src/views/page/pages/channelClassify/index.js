@@ -1,81 +1,89 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { observer, inject, } from "mobx-react"
 import Header from "../../../../components/header"
-import { Tabs, WhiteSpace } from 'antd-mobile';
+import GoodsList from "../../../../components/goddList"
+import { Tabs } from 'antd-mobile';
+import BS from "better-scroll";
 import "./index.scss"
 @inject("pages")
 @observer
 class ChannelClassify extends Component {
-    // constructor() {
-    //     super();
-    //     this.state = {
-    //         page: 0,
-    //         currentCategoryId: 0
-    //     }
-    // }
-
-    // goBack(currentCategoryId) {
-    //     this.props.history.go(-1)
-    // }
-    // componentWillMount() {
-    //     const { match: { params: { id } } } = this.props
-    //     this.setState({
-    //         currentCategoryId: id
-    //     })
-    // }
+    constructor() {
+        super();
+        this.state = {
+            page: 0,
+            currentCategoryId: 0,
+            channelData: [],
+        }
+    }
     // /*切换分类*/
-    clickTab({ id }, index) {
-        // if (this.state.currentCategoryId !== id) {
-        //     this.setState({
-        //         page: index,
-        //         currentCategoryId: id
-        //     })
-        //     window.scrollTo(0, 0)
-        // }
+    clickTab({ key, page }) {
+        if (this.state.currentCategoryId !== key) {
+            this.setState({
+                page: page,
+                currentCategoryId: key
+            })
+            window.scrollTo(0, 0)
+            //获取分类ID分类Nav数据 传入id
+            this.props.pages.getChannel_data(key)
+            this.props.pages.getGood_data({ categoryId: key, page: 1, size: 1000 })
+        }
+    }
+    componentWillMount() {
+        const { match: { params: { id } } } = this.props
+        this.setState({
+            currentCategoryId: id * 1
+        })
+        this.props.pages.getGood_data({ categoryId: id, page: 1, size: 1000 })
     }
     componentDidMount() {
-        let id = this.props.match.params.id;
+        const { match: { params: { id } } } = this.props
         this.props.pages.getChannel_data(id)
+        console.log(this.refs.goodsLisBox)
+        new BS(this.refs.goodsListBox, {
+            probeType: 3
+        })
     }
-
     render() {
-        let datas = this.props.pages.channelData
-        console.log(datas)
-        const tabs = datas && datas.map((item) => {
-            // console.log(item)
+        const { match: { params: { id } } } = this.props
+        let { goodlistData, channelData } = this.props.pages
+        let { currentCategoryId, } = this.state
+        const tabs = channelData.map((item, index) => {
             return (
-                { "title": item.name, "key": item.id }
+                { "title": item.name, "key": item.id, "page": index }
             )
         })
-
+        //渲染顶部分类数据
+        let currentCategory = channelData.map((item, index) => {
+            return (
+                item.id === currentCategoryId ?
+                    <Fragment key={item.id}>
+                        <div>{item.name}</div>
+                        <div>{item.front_name}</div>
+                    </Fragment> : null
+            )
+        })
         return (
             <div className="wrap bcColor">
                 <Header {...this.props} data={"奇趣分类"} />
-                <section>
+                <section className='channelClassifyBox'>
                     <div className="tabWrap">
                         <Tabs tabs={tabs} onTabClick={this.clickTab.bind(this)} renderTabBar={props => <Tabs.DefaultTabBar {...props} page={3} />}>
                         </Tabs>
                     </div>
-                    <div className="categoryDetail">
-                        <div>居家</div><div>回家，放松身心</div>
-                        {/* <div>{currentCategory.name}</div>
-                        <div>{currentCategory.front_name}</div> */}
+                    <div ref="goodsListBox" className="goodsListBox">
+                        <div>
+                            <div className="categoryDetail">
+                                {currentCategory}
+                            </div>
+                            <div className="goodsList" >
+                                {goodlistData.map((item, index) => {
+                                    return <GoodsList name={item.name} list_pic_url={item.list_pic_url} retail_price={item.retail_price} key={item.id}></GoodsList>
+                                })}
+                            </div>
+                        </div>
                     </div>
-                    <div className="goodsList">
-                        {/* <GoodsList goodsList={goodsList}></GoodsList> */}
-                        <a className="goodsItem">
-                            <div className="goodsItemImg">
-                                <img className="imgLazyload loadEnd" src="http://yanxuan.nosdn.127.net/1f67b1970ee20fd572b7202da0ff705d.png" alt="imgLazyLoad" />
-                            </div><div className="goodsItemName">母亲节礼物-舒适安睡组合</div><div className="goodsItemPrice">￥2598元</div></a>
-                        <a className="goodsItem">
-                            <div className="goodsItemImg">
-                                <img className="imgLazyload loadEnd" src="http://yanxuan.nosdn.127.net/1f67b1970ee20fd572b7202da0ff705d.png" alt="imgLazyLoad" />
-                            </div><div className="goodsItemName">母亲节礼物-舒适安睡组合</div><div className="goodsItemPrice">￥2598元</div></a>
-                    </div>
-
                 </section>
-
-
             </div>
         )
     }

@@ -148,11 +148,7 @@ class page extends Component {
                             )
                         })
                     }
-                    {/* <div className='cateGoryGoodsWrap'>
-
-                    </div> */}
                 </div>
-
             </section >
         );
     }
