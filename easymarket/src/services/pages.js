@@ -15,3 +15,11 @@ export function getGoodList({ categoryId, page, size }) {
 export function getBrandDetail(id) {
     return request.get("/brand/detail", { params: { id } })
 }
+//获取商品详情
+export function getGoodgoodsDetail(id) {
+    return request.get("/goods/detail", { params: { id } })
+}
+//相关商品
+export function getGoodsrelated(id) {
+    return request.get("/brand/detail", { params: { id } })
+}
