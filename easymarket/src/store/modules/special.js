@@ -13,23 +13,20 @@ class Special {
         this.relatedData = []
     }
     //专题
-    @action get_special() {
-        getSpecial().then(res => {
+    @action async get_special() {
+        let res=await  getSpecial();
             this.specialData = res.data.data
-        })
+
     }
     //专题详情
-    @action get_Detail(id) {
-        getDetail(id).then(res => {
+    @action async get_Detail(id) {
+        let res=await getDetail(id)
             this.detailData = res.data
-        })
     }
     //专题详情评论
-    @action get_Comment(valueId, typeId, page, size) {
-        getComment(valueId, typeId, page, size).then(res => {
-            console.log(res)
+    @action async get_Comment(valueId, typeId, page, size) {
+        let res=await  getComment(valueId, typeId, page, size)   
             this.commentData = res.data.data
-        })
     }
     //相关专题
     @action get_Related(id) {
@@ -38,11 +35,9 @@ class Special {
             this.relatedData = res.data
         })
     }
-    @action add_Message(obj) {
+    @action async add_Message(obj) {
         // console.log(obj)
-        addMessage({obj}).then(res => {
-            console.log(res)
-        })
+          let res=await addMessage({obj})
     }
 }
 

@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import "./index.scss";
 import 'swiper/dist/css/swiper.min.css'
 import Swiper from 'swiper'
+import { nextTick } from 'q';
 class Swipers extends Component {
     componentDidUpdate() {
-        // console.log(this.props.pages)
         new Swiper(this.refs.swiper, {
             autoplay: {
                 delay: 1000,//1秒切换一次
@@ -19,7 +19,7 @@ class Swipers extends Component {
         let data = this.props.data
         return (
             <div className="bannerbox">
-                <div className="swiper-container" ref='swiper'>
+                <div className="swiper-container"  ref='swiper'>
                     <div className="swiper-wrapper">
                         {
                             data && data.map((item) => {

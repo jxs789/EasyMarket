@@ -7,16 +7,15 @@ class Login {
     constructor() {
         this.getLogin = ''
     }
-    @action get_login(mobile, password) {
+    @action  async get_login(mobile, password) {
         let obj = { mobile, password }
-        login(obj).then(res => {
+        let res=await  login(obj);
             if (res.errno === 0) {
                 setToken(res.data.sessionKey)
                 this.getLogin = res.errno
             } else {
                 this.getLogin = res.errno
             }
-        })
     }
 }
 
