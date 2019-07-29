@@ -1,18 +1,22 @@
 .my_wrap {
   >.my_head {
     display: flex;
-    padding: 1rem 0.5rem;
+    padding: 0.6rem 0.5rem;
     box-sizing: border-box;
+    background: url(http://yanxuan.nosdn.127.net/d069279e5834bbca17065a9855a014bf.png) no-repeat;
+    background-size: 100%;
     >dt {
       img {
-        width: 1.8rem;
-        height: 1.8rem;
+        width: 1.6rem;
+        height: 1.6rem;
         border-radius: 50%;
       }
     }
     >dd {
-      padding: 0rem 0.2rem;
+      padding: 0.35rem 0.2rem;
       box-sizing: border-box;
+      line-height: 0.5rem;
+      color:#fff;
     }
   }
 }
