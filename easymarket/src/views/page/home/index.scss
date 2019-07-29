@@ -25,6 +25,7 @@ body,
 }
 .wrap {
   display: flex;
+  flex-direction: column;
   section {
     width: 100%;
     flex: 1;

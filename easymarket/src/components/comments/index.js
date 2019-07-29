@@ -7,7 +7,6 @@ class index extends Component {
         this.state = {};
     }
     render() {
-        console.log(this.props)
         let {commentData} =this.props;
         return (
             <>
