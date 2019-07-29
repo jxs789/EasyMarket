@@ -1,16 +1,79 @@
-import Home from '../views/page/home'
-import Page from '../views/page/pages'
-import Special from '../views/page/special'
-import Classify from '../views/page/classify'
-import ShoppingCar from '../views/page/shoppingCar'
-import My from '../views/page/my'
-import Login from '../views/page/login'
-import SpecialDetail from '../views/page/special/specialDetail'
-import ChannelClassity from '../views/page/pages/channelClassify'
-import More from '../views/page/special/more'
-import AddMessage from '../views/page/special/addMessage'
-import BrandDetail from "../views/page/pages/brandDetail"
-import Goods from "../components/goods/"
+import loadable from 'react-loadable'
+import React, { useEffect } from 'react'
+import { Toast } from 'antd-mobile';
+import '../scss/global.scss'
+
+function Loading() {
+    useEffect(() => {
+        Toast.loading('Loading...', 1, () => {
+        })
+    }, [])
+    return <div>
+
+    </div>
+}
+
+const Home = loadable({
+    loader: () => import("../views/page/home"),
+    loading: Loading
+})
+
+const Page = loadable({
+    loader: () => import("../views/page/pages"),
+    loading: Loading
+})
+
+const Special = loadable({
+    loader: () => import("../views/page/special"),
+    loading: Loading
+})
+
+const Classify = loadable({
+    loader: () => import("../views/page/classify"),
+    loading: Loading
+})
+
+const ShoppingCar = loadable({
+    loader: () => import("../views/page/shoppingCar"),
+    loading: Loading
+})
+
+const My = loadable({
+    loader: () => import("../views/page/my"),
+    loading: Loading
+})
+
+const Login = loadable({
+    loader: () => import("../views/page/login"),
+    loading: Loading
+})
+
+const SpecialDetail = loadable({
+    loader: () => import("../views/page/special/specialDetail"),
+    loading: Loading
+})
+
+const ChannelClassity = loadable({
+    loader: () => import("../views/page/pages/channelClassify"),
+    loading: Loading
+})
+
+const More = loadable({
+    loader: () => import("../views/page/special/more"),
+    loading: Loading
+})
+
+const AddMessage = loadable({
+    loader: () => import("../views/page/special/addMessage"),
+    loading: Loading
+})
+
+const BrandDetail = loadable({
+    loader: () => import("../views/page/pages/brandDetail"),
+    loading: Loading
+})
+
+
 const route = [
     {
         path: '/addMessage/:id',
@@ -31,10 +94,6 @@ const route = [
     {
         path: '/brandDetail/:id',
         component: BrandDetail
-    },
-    {
-        path: '/goods/:id',
-        component: Goods
     },
     {
         path: '/login',
