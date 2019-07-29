@@ -35,9 +35,9 @@ class Special {
             this.relatedData = res.data
         })
     }
+    //添加留言
     @action async add_Message(obj) {
-        // console.log(obj)
-          let res=await addMessage({obj})
+          await addMessage({obj})
     }
 }
 
