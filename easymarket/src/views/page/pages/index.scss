@@ -1,0 +1,245 @@
+.bcColor {
+  background: #f5f5f9;
+  .goods_category {
+    width: 100%;
+    // margin-bottom: 0.15rem;
+    display: flex;
+    width: 100%;
+    height: 1.4rem;
+    padding: 0.1rem 0;
+    background: white;
+    li {
+      display: flex;
+      flex-direction: column;
+      width: 20%;
+      height: 100%;
+      text-align: center;
+      .iconImg {
+        height: 70%;
+        width: 1rem;
+        display: block;
+        padding: 0.2rem;
+        margin: auto;
+      }
+    }
+  }
+  .brandBox {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.2rem;
+    overflow: hidden;
+  }
+  .brandTitle {
+    height: 1rem;
+    background: white;
+    text-align: center;
+    font-size: 0.3rem;
+    line-height: 1rem;
+    font-weight: bold;
+  }
+  .brandWrap {
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    .brandItem {
+      width: 50%;
+      height: 2.2rem;
+      display: flex;
+      position: relative;
+      color: #000;
+      .imgLazyload {
+        width: 100%;
+        height: 100%;
+      }
+      .brandItemlt {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        position: absolute;
+        top: 0.2rem;
+        left: 0.2rem;
+      }
+      .brandItemName {
+        font-size: 0.3rem;
+      }
+      .brandItemMinPrice {
+        font-size: 0.23rem;
+        color: darkgrey;
+      }
+    }
+  }
+  .newGoodsBox {
+    background: white;
+    .newGoodsTitle {
+      height: 1rem;
+      background: white;
+      text-align: center;
+      font-size: 0.3rem;
+      line-height: 1rem;
+      font-weight: bold;
+    }
+    .newGoodsWrap {
+      background: white;
+      display: flex;
+      flex-wrap: wrap;
+      .newGoodsItem {
+        width: 50%;
+        height: 5rem;
+        .imgLazyload {
+          width: 100%;
+          height: 70%;
+        }
+        .newGoodsName,
+        .newGoodsPrice {
+          height: 15%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 0.3rem;
+          color: #000;
+        }
+        .newGoodsPrice {
+          color: darkred;
+        }
+      }
+    }
+  }
+
+  .hotGoodsBox .hotGoodsWrap {
+    width: 100%;
+    padding: 0 0.2rem;
+    background: white;
+  }
+  .hotGoodsBox {
+    margin-top: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    .hotGoodsTitle {
+      height: 1rem;
+      background: white;
+      text-align: center;
+      font-size: 0.3rem;
+      line-height: 1rem;
+      font-weight: bold;
+    }
+    .hotGoodsWrap {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 0 0.2rem;
+      .hotGoodsItem {
+        height: 3rem;
+        position: relative;
+        display: flex;
+        border-top: 1px solid darkgray;
+        .imgLazyload {
+          width: auto;
+          height: 100%;
+        }
+        .hotGoodsInfos {
+          flex: 1;
+          padding: 0.5rem 0;
+          .hotGoodsName {
+            font-size: 0.32rem;
+            padding: 0.1rem 0;
+          }
+          .hotGoodsInfo {
+            color: darkgray;
+            font-size: 0.28rem;
+            padding: 0.1rem 0;
+          }
+          .hotGoodsPrice {
+            color: darkred;
+            font-size: 0.3rem;
+            padding: 0.1rem 0;
+          }
+        }
+      }
+    }
+  }
+  .topGoodsBox {
+    margin-top: 0.2rem;
+    background: white;
+    .topGoodsTitle {
+      height: 0.8rem;
+      background: white;
+      text-align: center;
+      font-size: 0.3rem;
+      line-height: 0.8rem;
+      // letter-spacing: 0.02rem;
+      font-weight: bold;
+    }
+    .topGoodsWrap {
+      height: 5.2rem;
+      padding-bottom: 0.2rem;
+      width: 100%;
+      display: flex;
+    }
+
+    .slide {
+      height: 6rem;
+      width: 100%;
+      .topGoodsItem {
+        height: 6rem;
+        .imgLazyload {
+          height: 4rem;
+          width: 100%;
+        }
+        .topGoodSubTitle {
+          margin-top: 0.1rem;
+          height: 0.4rem;
+          line-height: 0.4rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          .topGoodPrice {
+            color: darkred;
+          }
+        }
+        .topGoodsTitle {
+          color: gray;
+          text-align: left;
+          font-size: 0.24rem;
+        }
+      }
+    }
+  }
+  .cateGoryBox {
+    height: auto;
+    .cateGoryName {
+      height: 1rem;
+      text-align: center;
+      font-size: 0.3rem;
+      line-height: 1rem;
+      letter-spacing: 0.02rem;
+      font-weight: bold;
+    }
+    .cateGoryGoodsWrap {
+      display: flex;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+      width: 100%;
+    }
+    .categoryMoreGoods {
+      width: 49%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: white;
+      .categoryMoreGoods > div {
+        width: 100%;
+        text-align: center;
+        margin-top: 0.2rem;
+      }
+      img {
+        padding: 0.4rem;
+        height: 2rem;
+        width: 2rem;
+      }
+    }
+  }
+}

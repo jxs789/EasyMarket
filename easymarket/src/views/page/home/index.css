@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  font-size: 0.3rem;
+  box-sizing: border-box;
+}
+
+a {
+  background: transparent;
+  outline: none;
+}
+
+html,
+body,
+#root,
+.wrap {
+  width: 100%;
+  height: 100%;
+  font-size: 0.3rem;
+}
+
+.wrap {
+  display: flex;
+}
+
+.wrap section {
+  width: 100%;
+  flex: 1;
+  overflow-y: auto;
+  flex-direction: column;
+}

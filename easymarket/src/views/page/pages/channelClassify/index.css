@@ -1,0 +1,61 @@
+.wrap section .tabWrap {
+  position: fixed;
+  top: 1rem;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 10;
+}
+
+.wrap section .tabWrap .am-tabs-vertical.am-tabs-tab-bar-wrap {
+  width: 1rem;
+}
+
+.wrap section .tabWrap .am-tabs-default-bar-tab {
+  height: 0.64rem;
+}
+
+.wrap section .tabWrap .tabsItem {
+  font-size: 0.28rem;
+}
+
+.wrap section .goodsListBox {
+  flex: 1;
+  margin-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  overflow: hidden;
+}
+
+.wrap section .goodsListBox .categoryDetail {
+  padding: 0.2rem 0;
+  margin-top: 0.64rem;
+}
+
+.wrap section .goodsListBox .categoryDetail > div {
+  height: 0.6rem;
+  line-height: 0.6rem;
+  text-align: center;
+}
+
+.wrap section .goodsListBox .categoryDetail > div:nth-child(2) {
+  color: gray;
+  height: 0.5rem;
+  line-height: 0.5rem;
+  font-size: 0.28rem;
+}
+
+.wrap section .goodsListBox .goodsList {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.channelClassifyBox {
+  display: flex;
+}
+
+.goodsListBox {
+  flex: 1;
+  overflow: hidden;
+}

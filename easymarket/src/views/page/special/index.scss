@@ -1,0 +1,24 @@
+.special {
+  dl {
+    border-bottom: 0.2rem solid #f8f8f8;
+    dt {
+      img {
+        width: 100%;
+        height: 4rem;
+      }
+    }
+    dd {
+      text-align: center;
+      line-height: 0.6rem;
+      h4 {
+        margin-top: 0.1rem;
+      }
+      p {
+        color: #666;
+      }
+      span {
+        color: red;
+      }
+    }
+  }
+}

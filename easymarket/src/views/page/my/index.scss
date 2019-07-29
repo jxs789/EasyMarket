@@ -1,0 +1,18 @@
+.my_wrap {
+  >.my_head {
+    display: flex;
+    padding: 1rem 0.5rem;
+    box-sizing: border-box;
+    >dt {
+      img {
+        width: 1.8rem;
+        height: 1.8rem;
+        border-radius: 50%;
+      }
+    }
+    >dd {
+      padding: 0rem 0.2rem;
+      box-sizing: border-box;
+    }
+  }
+}
