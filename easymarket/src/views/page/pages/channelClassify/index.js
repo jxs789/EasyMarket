@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { observer, inject, } from "mobx-react"
 import Header from "../../../../components/header"
-import GoodsList from "../../../../components/goddList"
+import GoodsList from "../../../../components/goodsList"
 import { Tabs } from 'antd-mobile';
 import BS from "better-scroll";
 import "./index.scss"
@@ -67,7 +67,7 @@ class ChannelClassify extends Component {
                 <Header {...this.props} data={"奇趣分类"} />
                 <section className='channelClassifyBox'>
                     <div className="tabWrap">
-                        <Tabs tabs={tabs} onTabClick={this.clickTab.bind(this)} renderTabBar={props => <Tabs.DefaultTabBar {...props} page={3} />}>
+                        <Tabs tabs={tabs} onTabClick={this.clickTab.bind(this)} renderTabBar={props => <Tabs.DefaultTabBar {...props} page={5} />}>
                         </Tabs>
                     </div>
                     <div ref="goodsListBox" className="goodsListBox">

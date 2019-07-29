@@ -10,6 +10,7 @@ import ChannelClassity from '../views/page/pages/channelClassify'
 import More from '../views/page/special/more'
 import AddMessage from '../views/page/special/addMessage'
 import BrandDetail from "../views/page/pages/brandDetail"
+import Goods from "../components/goods/"
 const route = [
     {
         path: '/addMessage/:id',
@@ -30,6 +31,10 @@ const route = [
     {
         path: '/brandDetail/:id',
         component: BrandDetail
+    },
+    {
+        path: '/goods/:id',
+        component: Goods
     },
     {
         path: '/login',

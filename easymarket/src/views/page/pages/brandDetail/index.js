@@ -7,11 +7,9 @@ import "./index.scss"
 class BrandDetil extends Component {
     componentDidMount() {
         const { match: { params: { id } } } = this.props
-        console.log(id)
         this.props.pages.getBrandDetail_data(id)
     }
     render() {
-        console.log(this.props.pages.brandDetail)
         let { brandDetail } = this.props.pages
         return (
             <div className="wrap noTabPageContent">

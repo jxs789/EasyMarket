@@ -261,45 +261,7 @@
   width: 100%;
 }
 
-.bcColor .cateGoryBox .cateGoryGoodsWrap a {
-  width: 49%;
-  height: auto;
-  background: white;
-  position: relative;
-  margin: 0 0.02rem 0.06rem 0.02rem;
-}
-
-.bcColor .cateGoryBox .cateGoryGoodsWrap a .goodsItemImg {
-  width: 100%;
-  min-height: 2rem;
-  height: auto;
-}
-
-.bcColor .cateGoryBox .cateGoryGoodsWrap a .goodsItemImg img {
-  width: 100%;
-  height: auto;
-}
-
-.bcColor .cateGoryBox .cateGoryGoodsWrap a .goodsItemName {
-  text-align: center;
-  font-size: 0.28rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  padding-bottom: 0.3rem;
-  padding-top: 0.1rem;
-}
-
-.bcColor .cateGoryBox .cateGoryGoodsWrap a .goodsItemPrice {
-  text-align: center;
-  font-size: 0.28rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  color: red;
-}
-
-.bcColor .cateGoryBox .cateGoryGoodsWrap .categoryMoreGoods {
+.bcColor .cateGoryBox .categoryMoreGoods {
   width: 49%;
   display: flex;
   flex-wrap: wrap;
@@ -309,13 +271,13 @@
   background: white;
 }
 
-.bcColor .cateGoryBox .cateGoryGoodsWrap .categoryMoreGoods .categoryMoreGoods > div {
+.bcColor .cateGoryBox .categoryMoreGoods .categoryMoreGoods > div {
   width: 100%;
   text-align: center;
   margin-top: 0.2rem;
 }
 
-.bcColor .cateGoryBox .cateGoryGoodsWrap .categoryMoreGoods img {
+.bcColor .cateGoryBox .categoryMoreGoods img {
   padding: 0.4rem;
   height: 2rem;
   width: 2rem;

@@ -4,7 +4,7 @@ class NewGoods extends Component {
     render() {
         let { item } = this.props
         return (
-            <a className="newGoodsItem" href={`goods/detail/${item.id}`}>
+            <a className="newGoodsItem" href={`/goods/${item.id}`}>
                 <img className="imgLazyload" src={item.list_pic_url} alt="imgLazyLoad" />
                 <div className="newGoodsName">{item.name}</div>
                 <div className="newGoodsPrice">￥{item.retail_price}</div>

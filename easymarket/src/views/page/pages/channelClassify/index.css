@@ -7,10 +7,6 @@
   z-index: 10;
 }
 
-.wrap section .tabWrap .am-tabs-default-bar-content {
-  width: 60%;
-}
-
 .wrap section .tabWrap .am-tabs-vertical.am-tabs-tab-bar-wrap {
   width: 1rem;
 }
@@ -53,75 +49,6 @@
   height: auto;
   display: flex;
   flex-wrap: wrap;
-}
-
-.wrap section .goodsListBox .goodsList .goodsItem {
-  width: 50%;
-  flex-shrink: 0;
-  background: white;
-  height: auto;
-  padding: 0.2rem;
-  position: relative;
-}
-
-.wrap section .goodsListBox .goodsList .goodsItem .goodsItemImg {
-  width: 100%;
-  min-height: 2rem;
-  height: auto;
-}
-
-.wrap section .goodsListBox .goodsList .goodsItem .goodsItemImg img {
-  width: 100%;
-  height: auto;
-}
-
-.wrap section .goodsListBox .goodsList .goodsItem .goodsItemName {
-  width: 100%;
-  text-align: center;
-  font-size: 0.28rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  padding-bottom: 0.3rem;
-  padding-top: 0.1rem;
-}
-
-.wrap section .goodsListBox .goodsList .goodsItem .goodsItemPrice {
-  text-align: center;
-  font-size: 0.28rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  color: red;
-}
-
-.wrap section .goodsListBox .goodsList .goodsItem:nth-child(2n + 1):after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  border: 1px solid #f5f5f9;
-  border-left-width: 2px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 200%;
-  height: 200%;
-  transform: scale(0.5);
-  transform-origin: left top;
-}
-
-.wrap section .goodsListBox .goodsList .goodsItem:nth-child(2n):after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  border: 1px solid #f5f5f9;
-  border-right-width: 2px;
-  box-sizing: border-box;
-  width: 200%;
-  height: 200%;
-  transform: scale(0.5);
-  transform-origin: left top;
 }
 
 .channelClassifyBox {

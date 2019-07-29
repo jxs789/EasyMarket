@@ -221,57 +221,24 @@
       flex-wrap: wrap;
       flex-shrink: 0;
       width: 100%;
-      a {
-        width: 49%;
-        height: auto;
-        background: white;
-        position: relative;
-        margin: 0 0.02rem 0.06rem 0.02rem;
-        .goodsItemImg {
-          width: 100%;
-          min-height: 2rem;
-          height: auto;
-          img {
-            width: 100%;
-            height: auto;
-          }
-        }
-        .goodsItemName {
-          text-align: center;
-          font-size: 0.28rem;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          padding-bottom: 0.3rem;
-          padding-top: 0.1rem;
-        }
-        .goodsItemPrice {
-          text-align: center;
-          font-size: 0.28rem;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          color: red;
-        }
+    }
+    .categoryMoreGoods {
+      width: 49%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: white;
+      .categoryMoreGoods > div {
+        width: 100%;
+        text-align: center;
+        margin-top: 0.2rem;
       }
-      .categoryMoreGoods {
-        width: 49%;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background: white;
-        .categoryMoreGoods > div {
-          width: 100%;
-          text-align: center;
-          margin-top: 0.2rem;
-        }
-        img {
-          padding: 0.4rem;
-          height: 2rem;
-          width: 2rem;
-        }
+      img {
+        padding: 0.4rem;
+        height: 2rem;
+        width: 2rem;
       }
     }
   }
