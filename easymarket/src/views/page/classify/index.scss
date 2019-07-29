@@ -1,4 +1,6 @@
 .classify {
+  display: flex;
+  flex-direction: column;
   .classify_head {
     width: 100%;
     height: 0.85rem;
@@ -16,55 +18,66 @@
     }
   }
   .classify_count {
-    width: 100%;
-    display: flex;
-    .classify_left {
-      width: 28%;
-      height: 11rem;
-      text-align: center;
-      border-right: 0.02rem solid #eee;
-      li {
-        height: 0.85rem;
-        line-height: 0.85rem;
+    flex: 1;
+    overflow: scroll;
+
+    .count_small {
+      width: 100%;
+      display: flex;
+      .classify_left {
+        width: 28%;
+        height: 11rem;
+        text-align: center;
+        border-right: 0.02rem solid #eee;
+        li {
+          height: 0.85rem;
+          line-height: 0.85rem;
+        }
+        .active {
+          color: #2196F3;
+          border-left: 0.05rem solid #2196F3;
+        }
       }
-      .active {
-        color: skyblue;
-        border-left: 0.05rem solid skyblue;
-      }
-    }
-    .classify_right {
-      width: 72%;
-      text-align: center;
-      overflow: scroll;
-      img {
-        height: 2rem;
-      }
-      p {
-        height: 1.3rem;
-        margin-top: 0.2rem;
-        color: skyblue;
-      }
-      span {
-        color: #fff;
-        position: absolute;
-        top: 1.7rem;
-        left: 3.7rem;
-      }
-      .right_box {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        dl {
-          width: 50%;
-          dt {
-            img {
-              width: 1.5rem;
-              height: 1.5rem;
+      .classify_right {
+        width: 72%;
+        text-align: center;
+        img {
+          height: 2rem;
+          position: relative;
+        }
+        p {
+          height: 1.3rem;
+          margin-top: 0.2rem;
+          color: #2196F3;
+        }
+        .count_top{
+          width:100%;
+          height:2rem;
+          text-align: center;
+          line-height: 2rem;
+          background-size: 100% !important;
+          color: #fff;
+        }
+        .right_box {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          a{
+            width: 50%;
+            dl {
+              dt {
+                img {
+                  width:2rem;
+                  height:2rem;
+                }
+              }
+              dd {
+                padding: 0.2rem 0;
+                color: #000;
+              }
             }
           }
-          dd {
-            padding: 0.2rem 0;
-          }
+         
         }
       }
     }

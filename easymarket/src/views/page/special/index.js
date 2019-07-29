@@ -18,9 +18,6 @@ class special extends Component {
                     <dl key={item.id} onClick={() => this.gotoDetail(item.id, item.title)}>
                         <dt><img src={item.scene_pic_url} alt="" /></dt>
                         <dd>
-                            {/* <h4>{item.title}</h4>
-                            <p>{item.subtitle}</p>
-                            <span>{item.price_info}元起</span> */}
                             {
                                 arr.length && arr.length === 4 ?
                                     <p>{item.title}</p>

@@ -16,7 +16,6 @@ class index extends Component {
         };
     }
     render() {
-        console.log(this.props)
         const { value, num } = this.state;
         return (
             <div className='wrap'>

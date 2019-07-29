@@ -48,12 +48,13 @@ class ChannelClassify extends Component {
         let { goodlistData, channelData } = this.props.pages
         let { currentCategoryId, } = this.state
         const tabs = channelData.map((item, index) => {
+            console.log(item.id)
             return (
                 { "title": item.name, "key": item.id, "page": index }
             )
         })
         //渲染顶部分类数据
-        let currentCategory = channelData.map((item, index) => {
+        let currentCategory = channelData.map((item) => {
             return (
                 item.id === currentCategoryId ?
                     <Fragment key={item.id}>
@@ -63,12 +64,11 @@ class ChannelClassify extends Component {
             )
         })
         return (
-            <div className="wrap bcColor">
+            <div className="channel wrap">
                 <Header {...this.props} data={"奇趣分类"} />
                 <section className='channelClassifyBox'>
                     <div className="tabWrap">
-                        <Tabs tabs={tabs} onTabClick={this.clickTab.bind(this)} renderTabBar={props => <Tabs.DefaultTabBar {...props} page={3} />}>
-                        </Tabs>
+                        <Tabs tabs={tabs} onTabClick={this.clickTab.bind(this)} renderTabBar={props => <Tabs.DefaultTabBar {...props} page={3} />} />
                     </div>
                     <div ref="goodsListBox" className="goodsListBox">
                         <div>
