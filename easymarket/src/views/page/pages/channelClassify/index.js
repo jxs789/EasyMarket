@@ -54,6 +54,7 @@ class ChannelClassify extends Component {
         })
         //渲染顶部分类数据
         let currentCategory = channelData.map((item, index) => {
+
             return (
                 item.id === currentCategoryId ?
                     <Fragment key={item.id}>
@@ -62,6 +63,7 @@ class ChannelClassify extends Component {
                     </Fragment> : null
             )
         })
+        console.log(currentCategory)
         return (
             <div className="wrap bcColor">
                 <Header {...this.props} data={"奇趣分类"} />
@@ -71,7 +73,7 @@ class ChannelClassify extends Component {
                         </Tabs>
                     </div>
                     <div ref="goodsListBox" className="goodsListBox">
-                        <div>
+                        <div className="goodsBox">
                             <div className="categoryDetail">
                                 {currentCategory}
                             </div>

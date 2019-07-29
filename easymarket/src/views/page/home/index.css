@@ -21,6 +21,11 @@ body,
   font-size: 0.3rem;
 }
 
+.loadings {
+  display: flex;
+  flex-direction: column;
+}
+
 .wrap {
   display: flex;
 }

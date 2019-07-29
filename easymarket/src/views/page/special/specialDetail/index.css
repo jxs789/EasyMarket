@@ -1,10 +1,3 @@
-* {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  text-decoration: none;
-}
-
 .wrap {
   width: 100%;
   height: 100%;
@@ -17,70 +10,69 @@
   height: 8rem;
 }
 
-.wrap .bColor {
-  background: #fff;
-}
-
-.wrap section {
+.wrap .specialdetail {
   flex: 1;
   overflow: scroll;
 }
 
-.wrap section .topical_detail_main {
+.wrap .specialdetail .topical_detail_main {
   width: 100%;
 }
 
-.wrap section .topical_detail_main img {
+.wrap .specialdetail .topical_detail_main img {
   width: 100%;
   height: 6.6rem;
 }
 
-.wrap section .message {
+.wrap .specialdetail .message {
   box-sizing: border-box;
   padding: 0 0.2rem;
 }
 
-.wrap section .message a {
+.wrap .specialdetail .message a {
   color: #000;
 }
 
-.wrap section .message li {
+.wrap .specialdetail .message li {
   height: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 0.01rem solid #ccc;
 }
 
-.wrap section .more,
-.wrap section .recommend {
+.wrap .specialdetail .more,
+.wrap .specialdetail .recommend {
   width: 100%;
   height: 1rem;
   text-align: center;
   line-height: 1rem;
 }
 
-.wrap section .more a,
-.wrap section .recommend a {
+.wrap .specialdetail .more a,
+.wrap .specialdetail .recommend a {
   color: #000;
 }
 
-.wrap section .recommend {
+.wrap .specialdetail .recommend {
   background: #f8f8f8;
 }
 
-.wrap section .special {
+.wrap .specialdetail .specials {
   width: 100%;
   background: #f8f8f8;
   padding: 0 0.15rem;
   box-sizing: border-box;
 }
 
-.wrap section .special section dl {
+.wrap .specialdetail .specials .special {
+  background: #fff;
+}
+
+.wrap .specialdetail .specials .special dl {
   padding: 0.15rem 0.15rem;
   box-sizing: border-box;
 }
 
-.wrap section .special section dl dd p {
+.wrap .specialdetail .specials .special dl dd p {
   margin-left: -3.2rem;
 }

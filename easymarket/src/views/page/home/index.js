@@ -7,7 +7,7 @@ import './index.scss'
 class Home extends Component {
     render() {
         return (
-            <div className='wrap'>
+            <div className='wrap loadings'>
                 <MapRouter route={this.props.route} />
                 <Footer {...this.props} />
             </div>

@@ -1,5 +1,6 @@
 .goodsItem {
   width: 50%;
+  box-sizing: border-box;
   flex-shrink: 0;
   background: white;
   height: auto;
