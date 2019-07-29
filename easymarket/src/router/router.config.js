@@ -72,7 +72,10 @@ const BrandDetail = loadable({
     loading: Loading
 })
 
-
+const Goods = loadable({
+    loader: () => import("../components/goods"),
+    loading: Loading
+})
 const route = [
     {
         path: '/addMessage/:id',
@@ -93,6 +96,10 @@ const route = [
     {
         path: '/brandDetail/:id',
         component: BrandDetail
+    },
+    {
+        path: '/goods/:id',
+        component: Goods
     },
     {
         path: '/login',

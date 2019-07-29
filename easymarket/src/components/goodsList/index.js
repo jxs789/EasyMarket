@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { inject, observer } from "mobx-react"
+import "./index.scss"
 @inject("pages")
 @observer
 class GoodList extends Component {

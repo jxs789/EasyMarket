@@ -16,10 +16,10 @@ export function getBrandDetail(id) {
     return request.get("/brand/detail", { params: { id } })
 }
 //获取商品详情
-export function getGoodgoodsDetail(id) {
+export function getgoodsDetail(id) {
     return request.get("/goods/detail", { params: { id } })
 }
 //相关商品
 export function getGoodsrelated(id) {
-    return request.get("/brand/detail", { params: { id } })
+    return request.get("/goods/related", { params: { id } })
 }
