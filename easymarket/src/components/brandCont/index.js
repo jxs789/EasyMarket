@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { NavLick } from "react-router-dom"
 export default class BrandCont extends Component {
     render() {
         let { item } = this.props;

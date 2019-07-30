@@ -19,15 +19,19 @@ class Swipers extends Component {
         let data = this.props.data
         return (
             <div className="bannerbox">
-                <div className="swiper-container"  ref='swiper'>
+                <div className="swiper-container" ref='swiper'>
                     <div className="swiper-wrapper">
                         {
                             data && data.map((item) => {
                                 return (
-                                    <div className="slide swiper-slide" key={item.id}>
-                                        <img src={item.image_url} alt="" />
-                                    </div>
+                                    item.content ?
+                                        <div className="slide swiper-slide" key={item.id + "slide"}>
+                                            <img src={item.image_url} alt="" />
+                                        </div> : <div className="slider swiper-slide" key={item.id + "slider"}>
+                                            <img src={item.img_url} alt="" />
+                                        </div>
                                 )
+
                             })
                         }
                     </div>

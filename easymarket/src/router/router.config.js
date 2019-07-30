@@ -1,7 +1,6 @@
 import loadable from 'react-loadable'
 import React, { useEffect } from 'react'
 import { Toast } from 'antd-mobile';
-
 function Loading() {
     useEffect(() => {
         Toast.loading('Loading...', 1, () => {
@@ -46,7 +45,6 @@ const Login = loadable({
     loader: () => import("../views/page/login"),
     loading: Loading
 })
-
 const SpecialDetail = loadable({
     loader: () => import("../views/page/special/specialDetail"),
     loading: Loading
@@ -75,7 +73,14 @@ const Goods = loadable({
     loader: () => import("../components/goods"),
     loading: Loading
 })
-
+const AllComment = loadable({
+    loader: () => import("../views/page/pages/allComment"),
+    loading: Loading
+})
+const Cart = loadable({
+    loader: () => import("../components/cart"),
+    loading: Loading
+})
 const route = [
     {
         path: '/addMessage/:id',
@@ -99,6 +104,10 @@ const route = [
     }, {
         path: '/goods/:id',
         component: Goods
+    },
+    {
+        path: '/allcomment/:id',
+        component: AllComment
     },
     {
         path: '/login',

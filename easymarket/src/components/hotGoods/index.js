@@ -4,7 +4,7 @@ class HotGoods extends Component {
         let { item } = this.props
         return (
             <div>
-                <a className="hotGoodsItem" key={item.id}>
+                <a className="hotGoodsItem" href={`/goods/${item.id}`} >
                     <img className="imgLazyload" src={item.list_pic_url} alt="imgLazyLoad" />
                     <div className="hotGoodsInfos">
                         <div className="hotGoodsName">{item.name}</div>

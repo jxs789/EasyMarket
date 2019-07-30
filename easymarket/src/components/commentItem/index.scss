@@ -1,0 +1,39 @@
+.commentItem {
+  width: 100%;
+  height: auto;
+  position: relative;
+  background: white;
+  color: gray;
+  padding-bottom: 0.1rem;
+  .userInfo {
+    height: 0.8rem;
+    line-height: 0.8rem;
+    font-size: 0.24rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    div {
+      &:nth-child(1) {
+        flex: 1 1;
+        color: black;
+      }
+      &:nth-child(2) {
+        width: auto;
+      }
+    }
+  }
+  .userComment {
+    line-height: 0.6rem;
+    font-size: 0.3rem;
+  }
+  .commentPicList {
+    display: flex;
+    img {
+      display: block;
+      width: 100px;
+      height: 100px;
+      box-sizing: content-box;
+      margin-right: 0.1rem;
+    }
+  }
+}

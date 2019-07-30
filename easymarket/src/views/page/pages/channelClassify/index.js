@@ -40,7 +40,8 @@ class ChannelClassify extends Component {
         const { match: { params: { id } } } = this.props
         this.props.pages.getChannel_data(id)
         new BS(this.refs.goodsListBox, {
-            probeType: 3
+            probeType: 3,
+            click: true
         })
     }
     render() {
@@ -63,7 +64,6 @@ class ChannelClassify extends Component {
                     </Fragment> : null
             )
         })
-        console.log(currentCategory)
         return (
             <div className="wrap bcColor">
                 <Header {...this.props} data={"奇趣分类"} />
@@ -79,7 +79,7 @@ class ChannelClassify extends Component {
                             </div>
                             <div className="goodsList" >
                                 {goodlistData.map((item, index) => {
-                                    return <GoodsList name={item.name} list_pic_url={item.list_pic_url} retail_price={item.retail_price} key={item.id}></GoodsList>
+                                    return <GoodsList name={item.name} list_pic_url={item.list_pic_url} retail_price={item.retail_price} key={item.id} id={item.id} {...this.props}></GoodsList>
                                 })}
                             </div>
                         </div>

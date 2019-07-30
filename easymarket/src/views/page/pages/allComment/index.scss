@@ -1,0 +1,14 @@
+.comment_box {
+  background: white;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  padding: 0 0.2rem;
+  .commentItem {
+    border-bottom: 1px solid gray;
+    background: #ffff;
+  }
+}
