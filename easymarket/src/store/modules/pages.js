@@ -1,27 +1,17 @@
 import { observable, action } from "mobx";
-import { getPage, getClassifyCommodity, getGoodList, getBrandDetail, getgoodsDetail, getGoodsrelated, getCarGoodscount, getCommentList, getCartAdd, getCartIndex } from "../../services/index"
+import { getPage, getClassifyCommodity, getGoodList, getBrandDetail, getgoodsDetail, getGoodsrelated, getCarGoodscount, getCommentList, getCartAdd, getCartIndex, getcollectDaddordelete } from "../../services/index"
 //修饰   操作
 export default class Pages {
-    @observable pageData;
-    @observable channelData;
-    @observable goodlistData;
-    @observable brandDetail;
-    @observable goodsDetail;
-    @observable goodsrelated;
-    @observable carContnum;
-    @observable commentListData;
+    @observable pageData = [];
+    @observable channelData = []
+    @observable goodlistData = [];
+    @observable brandDetail = [];
+    @observable goodsDetail = [];
+    @observable goodsrelated = [];
+    @observable carContnum = [];
+    @observable commentListData = [];
     @observable caraddcont;
-    constructor() {
-        this.pageData = []
-        this.channelData = []
-        this.goodlistData = []
-        this.brandDetail = []
-        this.goodsDetail = []
-        this.goodsrelated = []
-        this.carContnum = []
-        this.commentListData = []
-        this.caraddcont = []
-    }
+    @observable collect = {}
     //获取首页数据
     @action async getpages_data() {
         let data = await getPage()
@@ -78,4 +68,12 @@ export default class Pages {
         console.log(data)
         this.caraddcont = data.data
     }
+
+    //是否添加到收藏栏
+    @action async getcollectDaddordelete_data({ typeId, valueId }) {
+        let data = await getcollectDaddordelete({ typeId, valueId })
+        console.log(data.data)
+        this.collect = data.data
+    }
+
 }

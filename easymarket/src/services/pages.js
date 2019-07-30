@@ -41,3 +41,8 @@ export function getCartIndex() {
     return request.get('/cart/index',
     )
 }
+//是否添加到收藏栏
+export function getcollectDaddordelete({ typeId, valueId }) {
+    return request.post('/collect/addordelete', { typeId, valueId })
+
+}

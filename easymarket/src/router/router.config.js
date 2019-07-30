@@ -77,10 +77,6 @@ const AllComment = loadable({
     loader: () => import("../views/page/pages/allComment"),
     loading: Loading
 })
-const Cart = loadable({
-    loader: () => import("../components/cart"),
-    loading: Loading
-})
 const route = [
     {
         path: '/addMessage/:id',

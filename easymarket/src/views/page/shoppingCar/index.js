@@ -9,6 +9,7 @@ class ShoppingCar extends Component {
     }
     render() {
         let { cartList, cartTotal } = this.props.pages.caraddcont
+        console.log(cartTotal)
         return (
             <section className="cartBox">
                 <ul className="serviceList">
@@ -46,7 +47,7 @@ class ShoppingCar extends Component {
                     <div className="isItem">
                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAMAAACf4xmcAAAAQlBMVEUAAACrKyurKyurKyurKyurKyurKyurKyurKyurKyurKyurKyurKyurKyurKyvw19exOzv////z4uK1Q0Pt0dGxOjp+CNkCAAAADnRSTlMARVn7B9cVoc/jIWtnJIM++AMAAADUSURBVDjLndRLEoMgEEVRPyCg+FAh+99qYqmAabFL7/hMaKCrN/VWyRZopbJ9ETUaWbq5RLXBX6YmSChcpMRZdRKX6e6kDAqZzAmNYlpEpnCTimfEbfWmhLlnZp8qmLY5a47pVY0oNIWArfV+h5Jy88FsNg2q3JTNRLIK8sd4hTZnwfmzSuVsmRdPFGV+d1S18QjJUQUZB5IcVVBxvMlRBRsvKzmq0JOr9y58yNU/eEj8s3zyyPkvcyQk9wH57/xwOfCrhl9cNMGswdQ4HEt1GKsXfQHGSThPkNi75AAAAABJRU5ErkJggg==" alt="check" />
                     </div>
-                    <div className="cartMsgAll">已选(6)  ￥1794</div>
+                    <div className="cartMsgAll">已选({cartTotal && cartTotal.goodsCount})  ￥{cartTotal && cartTotal.goodsAmount}</div>
                     <div className="cartAllDoButton">编辑</div>
                     <div className="cartAllDoButton pay">下单</div>
                 </div>

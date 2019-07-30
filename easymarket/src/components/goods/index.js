@@ -75,10 +75,11 @@ class Goods extends Component {
             })
         }
     }
-    //查看更多评论
-    // allcommentChange() {
-    //     this.props.history.push(`/allComment`)
-    // }
+    //添加收藏
+    linkChange() {
+        let { match: { params: { id } } } = this.props
+        this.props.pages.getcollectDaddordelete_data({ typeId: 0, valueId: id })
+    }
     //调到购物车
     cartChanege() {
         this.props.history.push(`/home/shoppingCar`)
@@ -102,8 +103,9 @@ class Goods extends Component {
     }
     render() {
         let { info, issue, gallery, attribute, brand, comment, specificationList } = this.props.pages.goodsDetail;
+        console.log(this.props.collect)
+        //this.props.collect&& this.props.collect.type == "add" ? "like isLike" : "isLike"
         let { goodsrelated, carContnum } = this.props.pages
-        // console.log(carContnum)
         return (
             <div className="wrap goodsBox" >
                 <div className="goodsPage">
@@ -211,7 +213,7 @@ class Goods extends Component {
 
                     </div>
                     <div className="goodsPageDo">
-                        <div className="isLike">☆</div>
+                        <div className={this.props.collect && this.props.collect.type == "add" ? "like" : "isLike"} onClick={this.linkChange.bind(this)}>☆</div>
                         <div className="cartNum" onClick={() => this.cartChanege()}>
                             <i className="iconfont icon-gouwuche"><span>{carContnum && carContnum + this.state.goodsNum * 1}</span></i>
                         </div>

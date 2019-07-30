@@ -23,7 +23,6 @@ class Allcomment extends Component {
 
     render() {
         let { commentListData } = this.props.pages
-        console.log(commentListData)
         return (
             <div className="wrap">
                 <Header {...this.props} data={'常看更多评论'}></Header>
