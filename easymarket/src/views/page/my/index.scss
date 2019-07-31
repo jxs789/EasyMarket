@@ -1,18 +1,55 @@
 .my_wrap {
+  background: #F5F5F9;
   >.my_head {
     display: flex;
-    padding: 1rem 0.5rem;
+    padding: 0.7rem 0.5rem;
     box-sizing: border-box;
+    background: url("http://yanxuan.nosdn.127.net/d069279e5834bbca17065a9855a014bf.png") no-repeat;
+    background-size: 100%;
     >dt {
       img {
-        width: 1.8rem;
-        height: 1.8rem;
+        width: 1.55rem;
+        height: 1.55rem;
         border-radius: 50%;
       }
     }
     >dd {
-      padding: 0rem 0.2rem;
+      padding: 0.2rem 0.2rem;
       box-sizing: border-box;
+      line-height: 0.6rem;
+      color:#fff;
+    }
+  }
+  .my_count{
+    display: flex;
+    flex-wrap: wrap;
+    dl{
+      width:33.3%;
+      height:33%;
+      background: #fff;
+      border:1px solid #ccc;
+      padding:0.55rem 0;
+      line-height: 0.7rem;
+      dt{
+        text-align: center;    
+        font-size: 0.6rem;  
+        color:#9E9E9E;  
+      }
+      dd{
+        text-align: center;
+        color:#000;  
+      }
+    }
+  }
+  .exit_btn{
+    padding:0.2rem 0;
+    box-sizing: border-box;
+    text-align: center;
+    button{
+      width:100%;
+      height:1rem;
+      background: #fff;
+      border:none;
     }
   }
 }

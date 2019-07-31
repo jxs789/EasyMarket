@@ -75,8 +75,33 @@ const Goods = loadable({
     loader: () => import("../components/goods"),
     loading: Loading
 })
+const Search = loadable({
+    loader: () => import("../views/page/classify/search"),
+    loading: Loading
+})
+
+const Collect = loadable({
+    loader: () => import("../views/page/my/collect"),
+    loading: Loading
+})
+const Address = loadable({
+    loader: () => import("../views/page/my/address"),
+    loading: Loading
+})
 
 const route = [
+    {
+        path: '/collect',
+        component: Collect,
+    },
+    {
+        path: '/address',
+        component: Address,
+    },
+    {
+        path: '/search',
+        component: Search,
+    },
     {
         path: '/addMessage/:id',
         component: AddMessage,

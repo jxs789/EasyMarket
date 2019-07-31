@@ -76,7 +76,6 @@ class page extends Component {
                                 <NewGoods  {...this.props} key={item.id} item={item} />
                             )
                         })
-
                         }
 
                     </div>
