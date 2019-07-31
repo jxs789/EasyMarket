@@ -6,7 +6,8 @@
   width: 100%;
   padding: 0 0.2rem;
   background: white;
-  div{
-      height:1rem;
-  }
+}
+
+.hotGoodsWrap div {
+  height: 1rem;
 }

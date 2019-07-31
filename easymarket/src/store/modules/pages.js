@@ -76,8 +76,10 @@ export default class Pages {
     //是否添加到收藏栏
     @action async getcollectDaddordelete_data({ typeId, valueId }) {
         let data = await getcollectDaddordelete({ typeId, valueId })
+        console.log(data.data, 666)
         this.collect = data.data
     }
+
 
     //单选
     @action.bound async getIsChecked(id) {

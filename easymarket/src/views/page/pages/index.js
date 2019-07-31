@@ -4,7 +4,7 @@ import Swipers from "../../../components/swiper"
 import { inject, observer } from "mobx-react";
 import 'swiper/dist/css/swiper.min.css'
 import BrandCont from "../../../components/brandCont/"
-import Swipers from 'swiper'
+import Swiper from '../../../components/swiper'
 import NewGoods from '../../../components/newGoods';
 import HotGoods from "../../../components//hotGoods/"
 import TopGoods from "../../../components//topGoods/";
@@ -26,7 +26,7 @@ class page extends Component {
         let { banner, channel, brandList, categoryList, hotGoodsList, newGoodsList, topicList } = this.props.pages.pageData;
         return (
             <section className="bcColor">
-                <Swipers {...this.props} data={banner} height={4.4} />
+                <Swiper {...this.props} data={banner} height={4.4} />
                 <ul className="goods_category">
                     {
                         channel && channel.map((item) => {

@@ -8,12 +8,13 @@ import Swipers from "../swiper"
 import BS from "better-scroll"
 import CommentItem from "../commentItem/"
 @inject("pages")
+@inject("my")
 @observer
 class Goods extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            collect: false,
+            userHasCollect: 0,
             modal2: false,
             modal1: false,
             flag: false,
@@ -23,15 +24,20 @@ class Goods extends Component {
             ind2: 0
         };
     }
-    componentDidMount() {
-        const { match: { params: { id } } } = this.props
-        this.props.pages.getGoodsDetail_data(id)
-        this.props.pages.getGoodsrelated_data(id)
-        this.props.pages.getCarGoodscount_data()
+    async componentDidMount() {
+        const { match: { params: { id } } } = this.props;
+        await this.props.pages.getGoodsDetail_data(id)
+        await this.props.pages.getGoodsrelated_data(id)
+        await this.props.pages.getCarGoodscount_data()
         new BS(this.refs.goodsCont, {
             probeType: 3,
             click: true
         })
+        let { userHasCollect } = this.props.pages.goodsDetail;
+        this.setState({
+            userHasCollect
+        })
+        console.log(userHasCollect, 8888)
     }
     showModal() {
         this.setState({
@@ -76,19 +82,11 @@ class Goods extends Component {
         }
     }
     //添加收藏
-    linkChange() {
+    async linkChange() {
         let { match: { params: { id } } } = this.props
+        await this.props.pages.getcollectDaddordelete_data({ typeId: 0, valueId: id })
         let { type } = this.props.pages.collect
-        this.props.pages.getcollectDaddordelete_data({ typeId: 0, valueId: id })
-        if (type === "add") {
-            this.setState({
-                collect: true
-            })
-        } else if (type === "delete") {
-            this.setState({
-                collect: false
-            })
-        }
+        this.setState({ userHasCollect: type === 'add' ? 1 : 0 })
     }
     //调到购物车
     cartChanege() {
@@ -112,7 +110,9 @@ class Goods extends Component {
         });
     }
     render() {
-        let { info, issue, gallery, attribute, brand, comment, specificationList } = this.props.pages.goodsDetail;
+
+        let { info, issue, gallery, attribute, brand, comment, specificationList, productList, userHasCollect } = this.props.pages.goodsDetail;
+        console.log(userHasCollect, 77)
         let { goodsrelated, carContnum } = this.props.pages
         return (
             <div className="wrap goodsBox" >
@@ -217,7 +217,7 @@ class Goods extends Component {
 
                     </div>
                     <div className="goodsPageDo">
-                        <div className={this.state.collect ? "like isLike" : "isLike"} onClick={this.linkChange.bind(this)}>☆</div>
+                        <div className={this.state.userHasCollect === 1 ? "like isLike" : "isLike"} onClick={this.linkChange.bind(this)}>{this.state.userHasCollect === 1 ? '★' : '☆'}</div>
                         <div className="cartNum" onClick={() => this.cartChanege()}>
                             <i className="iconfont icon-gouwuche"><span>{carContnum && carContnum + this.state.goodsNum * 1}</span></i>
                         </div>
