@@ -1,10 +1,9 @@
 .cartBox {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 
-section .serviceList {
+.cartBox .serviceList {
   height: 0.8rem;
   background: #f4f4f4;
   display: flex;
@@ -15,27 +14,32 @@ section .serviceList {
   padding: 0;
 }
 
-section .serviceList li {
+.cartBox .serviceList li {
   flex: 1 1;
   color: #666;
   font-size: 0.24rem;
   text-align: center;
 }
 
-section .serviceList li span {
+.cartBox .serviceList li span {
   color: red;
   margin-right: 0.15rem;
   font-size: 0.3rem;
 }
 
-section .cartGoodsListWrap {
+.cartBox .cartGoodsListWrap {
   flex: 1;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-section .cartGoodsListWrap .cartItem {
+.cartBox .cartGoodsListWrap > div {
+  padding-bottom: 1.4rem;
+}
+
+.cartBox .cartGoodsListWrap .cartItem {
   display: flex;
   height: 2.2rem;
   padding: 0.2rem;
@@ -45,35 +49,35 @@ section .cartGoodsListWrap .cartItem {
   width: 100%;
 }
 
-section .cartGoodsListWrap .cartItem .isCheckItem {
+.cartBox .cartGoodsListWrap .cartItem .isCheckItem {
   width: 0.8rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-section .cartGoodsListWrap .cartItem .isCheckItem img {
+.cartBox .cartGoodsListWrap .cartItem .isCheckItem img {
   width: 0.38rem;
   height: auto;
 }
 
-section .cartGoodsListWrap .cartItem .goodsImg {
+.cartBox .cartGoodsListWrap .cartItem .goodsImg {
   width: 1.8rem;
   background: #f4f4f4;
 }
 
-section .cartGoodsListWrap .cartItem .goodsImg img {
+.cartBox .cartGoodsListWrap .cartItem .goodsImg img {
   width: 100%;
   height: 1.8rem;
 }
 
-section .cartGoodsListWrap .cartItem .cartGoodsMsg {
+.cartBox .cartGoodsListWrap .cartItem .cartGoodsMsg {
   flex: 1;
   padding: 0 0.1rem;
   min-width: 0;
 }
 
-section .cartGoodsListWrap .cartItem .cartGoodsMsg div {
+.cartBox .cartGoodsListWrap .cartItem .cartGoodsMsg div {
   height: 33.333%;
   display: flex;
   align-items: center;
@@ -83,15 +87,85 @@ section .cartGoodsListWrap .cartItem .cartGoodsMsg div {
   text-overflow: ellipsis;
 }
 
-section .cartGoodsListWrap .cartItem .cartGoodsMsg .price {
+.cartBox .cartGoodsListWrap .cartItem .cartGoodsMsg .price {
   color: red;
 }
 
-section .cartGoodsListWrap .cartItem .cartGoodsMsg .cartGoodsNum {
+.cartBox .cartGoodsListWrap .cartItem .cartGoodsMsg .cartGoodsNum {
   width: auto;
 }
 
-section .cartGoodsDo {
+.cartBox .cartGoodsListWrap .cartItem .cartGoodEditWrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.cartBox .cartGoodsListWrap .cartItem .cartGoodEditWrap .cartEditSizeName {
+  font-size: 0.3rem;
+}
+
+.cartBox .cartGoodsListWrap .cartItem .cartGoodEditWrap .cartEditNum .price {
+  color: red;
+}
+
+.cartBox .cartGoodsListWrap .cartItem .cartGoodEditWrap .cartGoodEditWrap > div {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 0.2rem;
+}
+
+.cartBox .cartGoodsListWrap .cartItem .cartGoodEditWrap > div {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 0.2rem;
+}
+
+.cartBox .cartGoodsListWrap .cartItem .cartGoodEditWrap .cartEditNum div:nth-child(2) {
+  display: flex;
+  flex: 1;
+  flex-direction: row-reverse;
+}
+
+.cartBox .cartGoodsListWrap .cartItem .cartGoodEditWrap .cartEditNum div:nth-child(2) > .countOp div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.5rem;
+}
+
+.cartBox .cartGoodsListWrap .cartItem .cartGoodEditWrap .cartEditNum div:nth-child(2) .countOp {
+  width: auto;
+  display: flex;
+}
+
+.cartBox .cartGoodsListWrap .cartItem .cartGoodEditWrap .cartEditNum div:nth-child(2) .countOp > div:nth-child(1),
+.cartBox .cartGoodsListWrap .cartItem .cartGoodEditWrap .cartEditNum div:nth-child(2) .countOp > div:nth-child(3) {
+  width: 0.6rem;
+  height: 0.6rem;
+  border: 1px solid gainsboro;
+}
+
+.cartBox .cartGoodsListWrap .cartItem .cartGoodEditWrap .cartEditNum div:nth-child(2) .countOp > div:nth-child(2) {
+  min-width: 1rem;
+  height: 0.6rem;
+  padding: 0 0.2rem;
+  font-size: 0.32rem;
+  border: 1px solid gainsboro;
+  border-right: none;
+  border-left: none;
+}
+
+.cartBox .cartGoodsDo {
   position: fixed;
   bottom: 1rem;
   height: 1.1rem;
@@ -105,25 +179,25 @@ section .cartGoodsDo {
   z-index: 1000;
 }
 
-section .cartGoodsDo .isItem {
-  width: 0.4rem;
-  line-height: 0.4rem;
+.cartBox .cartGoodsDo .isCheckItem {
+  width: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-section .cartGoodsDo .isItem img {
+.cartBox .cartGoodsDo .isCheckItem img {
   width: 0.38rem;
-  margin: 0.3rem 0 0 0.2rem;
   height: auto;
 }
 
-section .cartGoodsDo .cartMsgAll {
+.cartBox .cartGoodsDo .cartMsgAll {
   flex: 1;
   line-height: 1.1rem;
   font-size: 0.3rem;
-  margin-left: 0.3rem;
 }
 
-section .cartGoodsDo .cartAllDoButton {
+.cartBox .cartGoodsDo .cartAllDoButton {
   width: auto;
   padding: 0 0.5rem;
   display: flex;
@@ -131,7 +205,7 @@ section .cartGoodsDo .cartAllDoButton {
   align-items: center;
 }
 
-section .cartGoodsDo .pay {
+.cartBox .cartGoodsDo .pay {
   background: #ab2b2b;
   padding: 0 0.5rem;
   color: white;

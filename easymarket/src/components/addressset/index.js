@@ -4,9 +4,7 @@ import isCheck from '../../static/img/isCheck.png'
 import noCheck from '../../static/img/noCheck.png'
 import { PickerView, Modal } from 'antd-mobile';
 import addresList from './address'
-
 class index extends Component {
-
     //改变地址
     changePicker = () => {
         const firstData = addresList.filter(item => item.value === this.state.provinceId)
@@ -52,8 +50,39 @@ class index extends Component {
             districtId: 403,
         };
     }
+    changeDetault = () => {
+        let { isDefault } = this.state;
+        this.setState({
+            isDefault: !isDefault
+        })
+    }
+    openModel = () => {
+        let { visibleFlag } = this.state
+        this.setState({
+            visibleFlag: !visibleFlag
+        })
+    }
+    pcickerChange = (e) => {
+        this.setState({
+            provinceId: e[0],
+            cityId: e[1],
+            districtId: e[2],
+        })
+    }
+    closeModel = () => {
+        let { visibleFlag } = this.state
+        this.setState({
+            visibleFlag: !visibleFlag
+        })
+    }
+    tureModel = (e) => {
+        let { visibleFlag } = this.state
+        this.setState({
+            visibleFlag: !visibleFlag
+        })
+        this.changePicker()
+    }
     render() {
-
         const {
             name,
             city_id,
@@ -108,7 +137,7 @@ class index extends Component {
                                 {newPicker}
                             </div>
                             <div className="onePx_bottom">
-                                <input placeholder="详细地址"  defaultValue={address}  />
+                                <input placeholder="详细地址" defaultValue={address} />
                             </div>
                             <div className="onePx_bottom">
                                 <div className='isDefaultAddress' onClick={() => this.changeDetault()}>
@@ -136,38 +165,6 @@ class index extends Component {
                 </Modal>
             </div>
         );
-    }
-    changeDetault = () => {
-        let { isDefault } = this.state;
-        this.setState({
-            isDefault: !isDefault
-        })
-    }
-    openModel = () => {
-        let { visibleFlag } = this.state
-        this.setState({
-            visibleFlag: !visibleFlag
-        })
-    }
-    pcickerChange = (e) => {
-        this.setState({
-            provinceId: e[0],
-            cityId: e[1],
-            districtId: e[2],
-        })
-    }
-    closeModel = () => {
-        let { visibleFlag } = this.state
-        this.setState({
-            visibleFlag: !visibleFlag
-        })
-    }
-    tureModel = (e) => {
-        let { visibleFlag } = this.state
-        this.setState({
-            visibleFlag: !visibleFlag
-        })
-        this.changePicker()
     }
 }
 

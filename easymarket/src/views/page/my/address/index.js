@@ -3,7 +3,7 @@ import { inject, observer } from "mobx-react";
 import Header from '../../../../components/header'
 import Addressset from '../../../../components/addressset'
 import './index.scss'
-import { Button, Toast } from 'antd-mobile';
+import { Button } from 'antd-mobile';
 
 @inject("my") //注入模块
 @observer
@@ -15,56 +15,10 @@ class index extends Component {
             flag: true,
             addressInfo: {},
             addressDoType: 0,
-            
         };
     }
     componentDidMount() {
         this.props.my.get_Address()
-    }
-    render() {
-        let { addressData, collectData } = this.props.my;
-        let { flag } = this.state;
-        // console.log(addressData)
-        return (
-            <div className='wrap'>
-
-                {
-                    flag ? <Addressset {...this.props} {...this.state} /> :
-                        <section className='address'>
-                            <Header {...this.props} data={'地址管理'} />
-                            <ul>
-                                {
-                                    // item.is_default
-                                    addressData && addressData.map(item =>
-                                        (
-
-                                            <li key={item.id} onClick={() => this.showAddress(item)}>
-                                                {item.is_default === 1 && <div className="isChooseAddress" />}
-                                                <div className='li_wrap'>
-                                                    <span>{item.name}</span>
-                                                    <div>
-                                                        <div>{item.mobile}</div>
-                                                        <p><span>{item.full_region}</span><i className='iconfont icon-lajitong'></i></p>
-                                                        <p>{item.address}</p>
-                                                    </div>
-                                                </div>
-
-                                            </li>
-                                        ))
-                                }
-                            </ul>
-                        </section>
-                }
-                <div className='addRess'>
-                    {
-                        flag ? <div className='closeAddress'>
-                            <Button onClick={() => this.addAddress()}>取消</Button>
-                            <Button type="primary" onClick={() => this.sure()}>确定</Button>
-                        </div> : <Button type="primary" onClick={() => this.addAddress()}>新建地址</Button>
-                    }
-                </div>
-            </div>
-        );
     }
     //修改地址
     showAddress = (item) => {
@@ -100,6 +54,49 @@ class index extends Component {
         //     return
         // }
     }
+    render() {
+        let { addressData, collectData } = this.props.my;
+        let { flag } = this.state;
+        // console.log(addressData)
+        return (
+            <div className='wrap'>
+                {
+                    flag ? <Addressset {...this.props} {...this.state} /> :
+                        <section className='address'>
+                            <Header {...this.props} data={'地址管理'} />
+                            <ul>
+                                {
+                                    // item.is_default
+                                    addressData && addressData.map(item =>
+                                        (
+                                            <li key={item.id} onClick={() => this.showAddress(item)}>
+                                                {item.is_default === 1 && <div className="isChooseAddress" />}
+                                                <div className='li_wrap'>
+                                                    <span>{item.name}</span>
+                                                    <div>
+                                                        <div>{item.mobile}</div>
+                                                        <p><span>{item.full_region}</span><i className='iconfont icon-lajitong'></i></p>
+                                                        <p>{item.address}</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        ))
+                                }
+                            </ul>
+                        </section>
+                }
+                <div className='addRess'>
+                    {
+                        flag ? <div className='closeAddress'>
+                            <Button onClick={() => this.addAddress()}>取消</Button>
+                            <Button type="primary" onClick={() => this.sure()}>确定</Button>
+                        </div> : <Button type="primary" onClick={() => this.addAddress()}>新建地址</Button>
+                    }
+                </div>
+            </div>
+        );
+    }
+
 }
 
 export default index;

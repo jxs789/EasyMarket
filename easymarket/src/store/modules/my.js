@@ -2,12 +2,9 @@ import { getCollect, getAddress } from '../../services/index'
 import { observable, action } from 'mobx'
 
 class My {
-    @observable collectData
-    @observable addressData
-    constructor() {
-        this.collectData = []
-        this.addressData = []
-    }
+    @observable collectData = []
+    @observable addressData = []
+
     //收藏栏
     @action  async get_Collect(typeId) {
         let res = await getCollect(typeId);

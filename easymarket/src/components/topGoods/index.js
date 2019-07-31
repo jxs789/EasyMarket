@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 export default class TopGoods extends Component {
+    gotoDetail = (id, title) => {
+        this.props.history.push(`/specialDetail/${id}`, { params: { title: title } })
+    }
     render() {
         let { item } = this.props;
         return (
@@ -12,7 +15,5 @@ export default class TopGoods extends Component {
             </div >
         )
     }
-    gotoDetail = (id, title) => {
-        this.props.history.push(`/specialDetail/${id}`, { params: { title: title } })
-    }
+
 }

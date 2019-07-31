@@ -45,7 +45,6 @@ class ChannelClassify extends Component {
         })
     }
     render() {
-        const { match: { params: { id } } } = this.props
         let { goodlistData, channelData } = this.props.pages
         let { currentCategoryId, } = this.state
         const tabs = channelData.map((item, index) => {
@@ -54,7 +53,7 @@ class ChannelClassify extends Component {
             )
         })
         //渲染顶部分类数据
-        let currentCategory = channelData.map((item, index) => {
+        let currentCategory = channelData.map((item) => {
 
             return (
                 item.id === currentCategoryId ?

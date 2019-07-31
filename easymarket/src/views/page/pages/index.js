@@ -4,7 +4,7 @@ import Swipers from "../../../components/swiper"
 import { inject, observer } from "mobx-react";
 import 'swiper/dist/css/swiper.min.css'
 import BrandCont from "../../../components/brandCont/"
-import Swiper from 'swiper'
+import Swipers from 'swiper'
 import NewGoods from '../../../components/newGoods';
 import HotGoods from "../../../components//hotGoods/"
 import TopGoods from "../../../components//topGoods/";
@@ -16,20 +16,6 @@ class page extends Component {
         super(props);
         this.state = {};
     }
-    componentDidUpdate() {
-        new Swiper(this.refs.swiper, {
-            slidesPerView: 1.2,
-            spaceBetween: 10,
-            centeredSlides: true,
-            loop: true,
-            // autoplay: {
-            //     delay: 1000,//1秒切换一次
-            //     disableOnInteraction: false,  //用户操作之后依然可以autoplay
-            // },
-            observer: true, //当siper内容改变后，从新计算宽高      没有这个会出现无法拖动的情况     //猪儿，好好敲，我回班了
-            observeParents: true,//当siper父盒子改变后，从新计算宽高  因为父盒子一般都不是用数据渲染的，这条一般不用加  
-        })
-    }
     componentDidMount() {
         this.props.pages.getpages_data();
     }
@@ -40,7 +26,7 @@ class page extends Component {
         let { banner, channel, brandList, categoryList, hotGoodsList, newGoodsList, topicList } = this.props.pages.pageData;
         return (
             <section className="bcColor">
-                <Swipers {...this.props} data={banner} />
+                <Swipers {...this.props} data={banner} height={4.4} />
                 <ul className="goods_category">
                     {
                         channel && channel.map((item) => {

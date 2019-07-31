@@ -21,12 +21,67 @@ class index extends Component {
         this.props.classify.get_Search()
         this.props.classify.get_Keyword()
     }
-    componentDidUpdate(){
+    componentDidUpdate() {
         // this.props.classify.get_Search()
     }
+    handelChange = (e) => {
+        this.setState({
+            value: e.target.value
+        })
+        if (!this.state.value) {
+            this.setState({
+                flag: true
+            })
+        }
+    }
+    handelSearch = (e) => {
+        if (e.target.value) {
+            this.props.classify.get_Keyword(this.state.value)
+        }
+        if (e.keyCode === 13) {
+            if (this.state.value) {
+                this.props.classify.getGood_data({ keyword: this.state.value })
+            } else {
+                Toast.fail('请输入内容!', 1);
+            }
+        }
+    }
+    //删除
+    del = () => {
+        this.setState({
+            mask: false
+        })
+        this.props.classify.del_History()
+    }
+
+    //下面
+    gotogoods = () => {
+        if (this.state.value) {
+            this.props.classify.getGood_data({ keyword: this.state.value })
+        }
+    }
+    //取消
+    cancel = () => {
+        this.setState({
+            value: '',
+            flag: true
+        })
+    }
+    //点击热门点击历史
+    addKeyword = (value) => {
+        this.setState({
+            value,
+            flag: true
+        })
+        this.props.classify.getGood_data({ keyword: value })
+    }
+    // //点击全部
+    // all = () => {
+
+    // }
     render() {
         let { searchData: { defaultKeyword, historyKeywordList, hotKeywordList }, keywordData, goodlistData } = this.props.classify;
-        let { value, flag,mask } = this.state;
+        let { value, flag, mask } = this.state;
         return (
             <div className='wrap'>
                 <header>
@@ -45,7 +100,7 @@ class index extends Component {
                 </header>
                 <section className='seach_count'>
                     {
-                        keywordData && keywordData.length > 0&&flag ?
+                        keywordData && keywordData.length > 0 && flag ?
                             <div className='show'>
                                 <div className='mask'>
                                     {
@@ -105,62 +160,6 @@ class index extends Component {
             </div>
         );
     }
-
-    handelChange = (e) => {
-        this.setState({
-            value: e.target.value
-        })
-        if (!this.state.value) {
-            this.setState({
-                flag:true
-            })
-        }
-    }
-    handelSearch = (e) => {
-        if (e.target.value) {
-            this.props.classify.get_Keyword(this.state.value)
-        }
-        if (e.keyCode === 13) {
-            if (this.state.value) {
-                this.props.classify.getGood_data({ keyword: this.state.value })
-            } else {
-                Toast.fail('请输入内容!', 1);
-            }
-        }
-    }
-    //删除
-    del = () => {
-        this.setState({
-            mask: false
-        })
-        this.props.classify.del_History()
-    }
-
-    //下面
-    gotogoods = () => {
-        if (this.state.value) {
-            this.props.classify.getGood_data({ keyword: this.state.value })
-        }
-    }
-    //取消
-    cancel = () => {
-        this.setState({
-            value: '',
-            flag:true
-        })
-    }
-    //点击热门点击历史
-    addKeyword = (value) => {
-        this.setState({
-            value,
-            flag: true
-        })
-        this.props.classify.getGood_data({ keyword: value })
-    }
-    // //点击全部
-    // all = () => {
-
-    // }
 }
 
 export default index;

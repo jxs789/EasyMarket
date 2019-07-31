@@ -15,6 +15,13 @@ class index extends Component {
         super(props);
         this.state = {};
     }
+    componentDidMount() {
+        let page = 1;
+        let size = 5;
+        this.props.special.get_Detail(this.props.match.params.id)
+        this.props.special.get_Comment(this.props.match.params.id, 1, page, size)
+        this.props.special.get_Related(this.props.match.params.id)
+    }
     render() {
         let { detailData, commentData, relatedData } = this.props.special;
         let data = this.props.location.state.params.title
@@ -36,13 +43,6 @@ class index extends Component {
                 </section>
             </div>
         );
-    }
-    componentDidMount() {
-        let page = 1;
-        let size = 5;
-        this.props.special.get_Detail(this.props.match.params.id)
-        this.props.special.get_Comment(this.props.match.params.id, 1, page, size)
-        this.props.special.get_Related(this.props.match.params.id)
     }
 }
 

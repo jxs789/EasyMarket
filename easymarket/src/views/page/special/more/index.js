@@ -8,6 +8,9 @@ import { inject, observer } from 'mobx-react'
 @observer
 
 class index extends Component {
+    componentDidMount() {
+        this.props.special.get_Comment(this.props.match.params.id, 1)
+    }
     render() {
         let { commentData } = this.props.special;
         return (
@@ -18,9 +21,6 @@ class index extends Component {
                 </section>
             </div>
         );
-    }
-    componentDidMount() {
-        this.props.special.get_Comment(this.props.match.params.id, 1)
     }
 }
 

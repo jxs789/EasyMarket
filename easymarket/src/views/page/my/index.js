@@ -87,7 +87,6 @@ class My extends Component {
     }
     handelClick = (item) => {
         if (item.link) {
-            console.log(item.link)
             this.props.history.push(`${item.link}`)
         } else {
             Toast.offline(`${item.name}功能还未解锁，请耐心等候~`, 1);

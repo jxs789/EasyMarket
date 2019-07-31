@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button,Toast } from 'antd-mobile'
+import { Button, Toast } from 'antd-mobile'
 import './index.scss'
 import { inject, observer } from 'mobx-react'
 import { getToken } from '../../../utils/index'
@@ -15,34 +15,6 @@ class index extends Component {
             pwd: ''
         };
     }
-
-    render() {
-        console.log(this.props.login.getLogin)
-        return (
-            <div className="wrap">
-                <div className='wrap_top'>
-                    <img src="http://yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png" alt="" />
-                </div>
-                <div className="wrap_inp">
-                    <input value={this.state.phone} onChange={(e) => this.setState({ phone: e.target.value })} />
-                </div>
-                <div className="wrap_inp">
-                    <input className='inp' value={this.state.pwd} onChange={(e) => this.setState({ pwd: e.target.value })} />
-                </div>
-                <div className='wrap_btn'>
-                    <Button type="primary" onClick={() => this.Submit()}>登录</Button>
-                </div>
-            </div>
-        );
-    }
-    Submit = () => {
-        if (this.state.phone && this.state.pwd) {
-            this.props.login.get_login(this.state.phone, this.state.pwd)
-        } else {
-            Toast.offline('请输入用户名和密码!', 1);
-        }
-    }
-
     componentDidUpdate() {
         // console.log(this.props.login.getLogin)
         if (this.props.login.getLogin === 0) {
@@ -66,6 +38,33 @@ class index extends Component {
                 }
             }
         }
+    }
+
+    Submit = () => {
+        if (this.state.phone && this.state.pwd) {
+            this.props.login.get_login(this.state.phone, this.state.pwd)
+        } else {
+            Toast.offline('请输入用户名和密码!', 1);
+        }
+    }
+
+    render() {
+        return (
+            <div className="wrap">
+                <div className='wrap_top'>
+                    <img src="http://yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png" alt="" />
+                </div>
+                <div className="wrap_inp">
+                    <input value={this.state.phone} onChange={(e) => this.setState({ phone: e.target.value })} />
+                </div>
+                <div className="wrap_inp">
+                    <input className='inp' value={this.state.pwd} onChange={(e) => this.setState({ pwd: e.target.value })} />
+                </div>
+                <div className='wrap_btn'>
+                    <Button type="primary" onClick={() => this.Submit()}>登录</Button>
+                </div>
+            </div>
+        );
     }
 }
 

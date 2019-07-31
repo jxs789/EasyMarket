@@ -12,8 +12,8 @@ export default class CommentItem extends Component {
                 <div className='userComment'>{data.content}</div>
                 <div className='commentPicList'>
                     {
-                        data.pic_list.length !== 0 ? data.pic_list.map((val, index) => {
-                            return <img src={val.pic_url} key={index + val.comment_id} />
+                        data.pic_list && data.pic_list.length !== 0 ? data.pic_list.map((val, index) => {
+                            return (<img src={val.pic_url} key={index + val.comment_id} />)
                         }) : null
                     }
                 </div>

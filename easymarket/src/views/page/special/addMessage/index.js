@@ -15,6 +15,26 @@ class index extends Component {
             num: 80
         };
     }
+    empty = () => {
+        this.setState({
+            value: ''
+        })
+    }
+    addtext = () => {
+        let { value } = this.state;
+        if (value) {
+            Toast.loading('Loading...', 1, () => {
+                this.props.special.add_Message({
+                    content: value,
+                    typeId: 1,
+                    valueId: this.props.match.params.id
+                })
+                this.props.history.goBack()
+            });
+        } else {
+            Toast.fail('请输入内容!', 1);
+        }
+    }
     render() {
         console.log(this.props)
         const { value, num } = this.state;
@@ -36,27 +56,6 @@ class index extends Component {
                 </section>
             </div >
         );
-    }
-    empty = () => {
-        this.setState({
-            value: ''
-        })
-    }
-    addtext = () => {
-        let { value } = this.state;
-        if (value) {
-            Toast.loading('Loading...', 1, () => {
-                this.props.special.add_Message({
-                    content: value,
-                    typeId: 1,
-                    valueId: this.props.match.params.id
-                })
-                this.props.history.goBack()
-            });
-        } else {
-            Toast.fail('请输入内容!', 1);
-        }
-
     }
 }
 
