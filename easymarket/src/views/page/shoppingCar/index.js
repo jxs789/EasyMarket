@@ -41,7 +41,6 @@ class ShoppingCar extends Component {
 
                         }
                     </div>
-
                 </div>
                 <div className="cartGoodsDo">
                     <div className="isItem">

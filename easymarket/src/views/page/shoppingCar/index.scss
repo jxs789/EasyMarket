@@ -1,9 +1,7 @@
 .cartBox {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-}
-section {
+  // overflow: hidden;
   .serviceList {
     height: 0.8rem;
     background: #f4f4f4;
@@ -30,6 +28,7 @@ section {
     width: 100%;
     display: flex;
     flex-direction: column;
+    overflow: scroll;
     .cartItem {
       display: flex;
       height: 2.2rem;

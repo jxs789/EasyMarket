@@ -9,7 +9,8 @@ class Login {
     }
     @action  async get_login(mobile, password) {
         let obj = { mobile, password }
-        let res=await  login(obj);
+        let res=await login(obj);
+        localStorage.setItem('userinfo',res.data.mobile)
             if (res.errno === 0) {
                 setToken(res.data.sessionKey)
                 this.getLogin = res.errno

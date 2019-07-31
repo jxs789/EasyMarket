@@ -23,8 +23,8 @@ export default class Pages {
         this.channelData = data.data.brotherCategory
     }
     //根据分类Id或者制造商Id获取商品
-    @action async getGood_data({ categoryId, page, size }) {
-        let data = await getGoodList({ categoryId, page, size })
+    @action async getGood_data({ categoryId, keyword, page, size }) {
+        let data = await getGoodList({ categoryId, keyword, page, size })
         this.goodlistData = data.data.goodsList
     }
     //根据制造商ID获取制造商详情

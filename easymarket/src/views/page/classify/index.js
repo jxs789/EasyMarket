@@ -32,7 +32,7 @@ class Classify extends Component {
         return (
             <section className='classify'>
                 <div className='classify_head'>
-                    <p>搜索商品，共239款好物</p>
+                    <p><NavLink to="/search">搜索商品，共239款好物</NavLink></p>
                 </div>
                 {
                     <div className='classify_count'>

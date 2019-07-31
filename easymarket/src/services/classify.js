@@ -9,3 +9,25 @@ export function getClassify() {
 export function getRight(params) {
     return request.get(`/catalog/current?id=${params}`);
 }
+
+//获取商品查询的相关信息
+export function getSearch() {
+    return request.get('/search/index');
+}
+
+//商品查询模糊查询关键字
+export function getKeyword(keyword) {
+    console.log(keyword)
+    return request.get(`/search/helper/?keyword=${keyword}`);
+}
+
+//删除商品查询的历史记录
+export function delHistory() {
+    return request.get('/search/clearhistory');
+}
+
+//根据分类Id或者制造商Id获取商品
+export function getGoodLists(params) {
+    console.log(params)
+    return request.get('/goods/list', {params})
+}
