@@ -89,7 +89,7 @@ class Goods extends Component {
         if (this.state.goodsNum === 0) {
             Toast.fail('请选择商品数量', 1);
         } else if (this.state.goodsNum >= 0) {
-            Toast.fail('添加成功', 1);
+            Toast.success('添加成功', 1);
             let goodsId = this.props.pages.goodsDetail.info.id
             let productId = this.props.pages.goodsDetail.productList[0].id
             let number = this.state.goodsNum
