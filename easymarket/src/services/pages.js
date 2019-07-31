@@ -38,8 +38,7 @@ export function getCartAdd({ goodsId, productId, number }) {
 }
 //获取用户购物车数据
 export function getCartIndex() {
-    return request.get('/cart/index',
-    )
+    return request.get('/cart/index')
 }
 //是否添加到收藏栏
 export function getcollectDaddordelete({ typeId, valueId }) {

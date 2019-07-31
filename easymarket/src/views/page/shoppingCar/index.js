@@ -9,7 +9,7 @@ class ShoppingCar extends Component {
     }
     render() {
         let { cartList, cartTotal } = this.props.pages.caraddcont
-        console.log(cartTotal)
+        console.log(this.props.pages.caraddcont)
         return (
             <section className="cartBox">
                 <ul className="serviceList">

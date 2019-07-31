@@ -10,7 +10,7 @@ export default class Pages {
     @observable goodsrelated = [];
     @observable carContnum = [];
     @observable commentListData = [];
-    @observable caraddcont;
+    @observable caraddcont = [];
     @observable collect = {}
     //获取首页数据
     @action async getpages_data() {
@@ -46,7 +46,6 @@ export default class Pages {
     //获取用户购物车商品数量
     @action async getCarGoodscount_data() {
         let data = await getCarGoodscount()
-        // console.log(data)
         this.carContnum = data.data.cartTotal.goodsCount
     }
     //根据专题ID或者商品ID获取评论获取相关专题
@@ -57,7 +56,6 @@ export default class Pages {
     }
     //添加到购物车
     @action async getCartAdd_data({ goodsId, productId, number, }) {
-        console.log(goodsId, productId, number)
         let data = await getCartAdd({ goodsId, productId, number, })
         console.log(data)
         // this.caraddcont = data.data.data;
@@ -65,7 +63,7 @@ export default class Pages {
     //获取用户购物车数据
     @action async getCartIndex_data() {
         let data = await getCartIndex()
-        console.log(data)
+        console.log(data.data)
         this.caraddcont = data.data
     }
 
