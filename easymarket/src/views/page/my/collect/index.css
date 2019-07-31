@@ -11,3 +11,10 @@
 .hotGoodsWrap div {
   height: 1rem;
 }
+
+.touchClear {
+  height: auto;
+  width: 100%;
+  position: relative;
+  background: #f5f5f9;
+}
