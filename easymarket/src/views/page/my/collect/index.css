@@ -6,16 +6,19 @@
   width: 100%;
   padding: 0 0.2rem;
   background: white;
-  div {
-    height: 1rem;
-  }
 }
+
+.hotGoodsWrap div {
+  height: 1rem;
+}
+
 .touchClear {
   height: auto;
   width: 100%;
   position: relative;
   background: #f5f5f9;
 }
+
 .left {
   -webkit-transform: translateX(-60px);
   transform: translateX(-60px);

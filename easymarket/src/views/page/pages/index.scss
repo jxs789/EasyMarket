@@ -129,34 +129,6 @@
       flex-direction: column;
       width: 100%;
       padding: 0 0.2rem;
-      .hotGoodsItem {
-        height: 3rem;
-        position: relative;
-        display: flex;
-        border-top: 1px solid darkgray;
-        .imgLazyload {
-          width: auto;
-          height: 100%;
-        }
-        .hotGoodsInfos {
-          flex: 1;
-          padding: 0.5rem 0;
-          .hotGoodsName {
-            font-size: 0.32rem;
-            padding: 0.1rem 0;
-          }
-          .hotGoodsInfo {
-            color: darkgray;
-            font-size: 0.28rem;
-            padding: 0.1rem 0;
-          }
-          .hotGoodsPrice {
-            color: darkred;
-            font-size: 0.3rem;
-            padding: 0.1rem 0;
-          }
-        }
-      }
     }
   }
   .topGoodsBox {

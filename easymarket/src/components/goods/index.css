@@ -232,7 +232,6 @@
 
 .wrap .goodsPage .goodsPageDo .isLike {
   line-height: 0.98rem;
-  font-size: 0.6rem;
   text-align: center;
   font-weight: bolder;
   font-size: 0.5rem;
@@ -241,11 +240,6 @@
 
 .wrap .goodsPage .goodsPageDo .like {
   color: gold;
-  line-height: 0.98rem;
-  font-size: 0.6rem;
-  text-align: center;
-  font-weight: bolder;
-  font-size: 0.5rem;
   border-right: 1px solid ghostwhite;
 }
 

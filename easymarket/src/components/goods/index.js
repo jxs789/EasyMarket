@@ -8,11 +8,13 @@ import Swipers from "../swiper"
 import BS from "better-scroll"
 import CommentItem from "../commentItem/"
 @inject("pages")
+@inject("my")
 @observer
 class Goods extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            userHasCollect: 0,
             modal2: false,
             modal1: false,
             flag: false,
@@ -22,15 +24,20 @@ class Goods extends Component {
             ind2: 0
         };
     }
-    componentDidMount() {
-        const { match: { params: { id } } } = this.props
-        this.props.pages.getGoodsDetail_data(id)
-        this.props.pages.getGoodsrelated_data(id)
-        this.props.pages.getCarGoodscount_data()
+    async componentDidMount() {
+        const { match: { params: { id } } } = this.props;
+        await this.props.pages.getGoodsDetail_data(id)
+        await this.props.pages.getGoodsrelated_data(id)
+        await this.props.pages.getCarGoodscount_data()
         new BS(this.refs.goodsCont, {
             probeType: 3,
             click: true
         })
+        let { userHasCollect } = this.props.pages.goodsDetail;
+        this.setState({
+            userHasCollect
+        })
+        console.log(userHasCollect, 8888)
     }
     showModal() {
         this.setState({
@@ -64,21 +71,22 @@ class Goods extends Component {
     }
     //切换样式
     sizeItemChange(ind, index) {
-        console.log(ind)
-        if (index == 0) {
+        if (index === 0) {
             this.setState({
                 ind1: ind
             })
-        } else if (index == 1) {
+        } else if (index === 1) {
             this.setState({
                 ind2: ind
             })
         }
     }
     //添加收藏
-    linkChange() {
+    async linkChange() {
         let { match: { params: { id } } } = this.props
-        this.props.pages.getcollectDaddordelete_data({ typeId: 0, valueId: id })
+        await this.props.pages.getcollectDaddordelete_data({ typeId: 0, valueId: id })
+        let { type } = this.props.pages.collect
+        this.setState({ userHasCollect: type === 'add' ? 1 : 0 })
     }
     //调到购物车
     cartChanege() {
@@ -102,9 +110,8 @@ class Goods extends Component {
         });
     }
     render() {
-        let { info, issue, gallery, attribute, brand, comment, specificationList } = this.props.pages.goodsDetail;
-        console.log(this.props.collect)
-        //this.props.collect&& this.props.collect.type == "add" ? "like isLike" : "isLike"
+
+        let { info, issue, gallery, attribute, brand, comment, specificationList, productList, userHasCollect } = this.props.pages.goodsDetail;
         let { goodsrelated, carContnum } = this.props.pages
         return (
             <div className="wrap goodsBox" >
@@ -113,7 +120,7 @@ class Goods extends Component {
                     <div className="goodsCont" ref="goodsCont" onClick={() => this.popupCar()}>
                         <div>
                             {
-                                gallery && gallery.length !== 0 ? <div className="imgbox-c"><Swipers {...this.props} data={gallery} /></div> : <div className="imgBox-k">
+                                gallery && gallery.length !== 0 ? <div className="imgbox-c"><Swipers {...this.props} data={gallery} height={7.7} /></div> : <div className="imgBox-k">
                                 </div>
                             }
                             <ul className="serviceList">
@@ -129,8 +136,8 @@ class Goods extends Component {
                             </div>
                             <div className="goodsSize">
                                 <div>
-                                    {specificationList && specificationList.map((item) => {
-                                        return item.valueList[0].value
+                                    {specificationList && specificationList.map((item, index) => {
+                                        return item.valueList[this.state['ind' + (1 + index)]].value
                                     })}
                                 </div>
                                 <div>x {this.state.goodsNum}</div>
@@ -144,10 +151,6 @@ class Goods extends Component {
                                             查看全部
                                     <i className='iconfont icon-angle-right'></i>
                                         </a>
-                                        {/* <div onClick={() => this.allcommentChange()}>
-                                            查看全部
-                                    <i className='iconfont icon-angle-right'></i>
-                                        </div> */}
                                     </div>
                                 </div>
                                 {/**
@@ -202,7 +205,7 @@ class Goods extends Component {
                                     <div className="goodsList">
                                         {
                                             goodsrelated && goodsrelated.map((item) => {
-                                                return (<GoodsList key={item.id} list_pic_url={item.list_pic_url} name={item.name} retail_price={item.retail_price} />)
+                                                return (<GoodsList key={item.id} list_pic_url={item.list_pic_url} name={item.name} retail_price={item.retail_price} id={item.id} />)
                                             })
                                         }
 
@@ -213,7 +216,7 @@ class Goods extends Component {
 
                     </div>
                     <div className="goodsPageDo">
-                        <div className={this.props.collect && this.props.collect.type == "add" ? "like" : "isLike"} onClick={this.linkChange.bind(this)}>☆</div>
+                        <div className={this.state.userHasCollect === 1 ? "like isLike" : "isLike"} onClick={this.linkChange.bind(this)}>{this.state.userHasCollect === 1 ? '★' : '☆'}</div>
                         <div className="cartNum" onClick={() => this.cartChanege()}>
                             <i className="iconfont icon-gouwuche"><span>{carContnum && carContnum + this.state.goodsNum * 1}</span></i>
                         </div>
@@ -222,7 +225,7 @@ class Goods extends Component {
                     {this.state.flag === true ? <div className='am-modal-container-1564386063872'>
                         <div>
                             <div className='am-modal-mask'></div>
-                            <div className='am-modal-wrap am-modal-wrap-popup' role='dialog'>
+                            <div className='am-modal-wrap am-modal-wrap-popup' role='dialog' onClick={() => { this.onClose('modal1') }} >
                                 <div className='am-modal am-modal-popup am-modal-popup-slide-up'>
                                     <div className='am-modal-content'>
                                         <div className='am-modal-body'>
@@ -263,7 +266,7 @@ class Goods extends Component {
 
                                                                             return (
                                                                                 <Fragment key={val.id}>
-                                                                                    <div className={this.state['ind' + (index + 1)] == ind ? "active" : "goodsSizeListItem"} onClick={() => this.sizeItemChange(ind, index)}>{val.value}</div>
+                                                                                    <div className={this.state['ind' + (index + 1)] === ind ? "active" : "goodsSizeListItem"} onClick={() => this.sizeItemChange(ind, index)}>{val.value}</div>
                                                                                 </Fragment>
                                                                             )
                                                                         })

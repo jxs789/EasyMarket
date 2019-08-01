@@ -4,12 +4,11 @@ import { inject, observer } from "mobx-react"
 import "./index.scss"
 import CommentItem from '../../../../components/commentItem/index'
 import BS from "better-scroll"
+
 @inject("pages")
 @observer
+
 class Allcomment extends Component {
-    constructor() {
-        super();
-    }
     componentDidMount() {
         const { match: { params: { id } } } = this.props
         this.props.pages.getCommentList_data({ valueId: id, typeId: 0, size: 100, pages: 1 })
@@ -17,10 +16,6 @@ class Allcomment extends Component {
             probeType: 3
         })
     }
-    componentDidUpdate(prevProps, prevState) {
-
-    }
-
     render() {
         let { commentListData } = this.props.pages
         return (
@@ -29,8 +24,7 @@ class Allcomment extends Component {
                 <div className="comment_box" ref="comment_box">
                     <div>
                         {
-                            commentListData.map((item, index) => {
-                                console.log(item)
+                            commentListData.map((item) => {
                                 return <CommentItem {...this.props} data={item} key={item.id}></CommentItem>
                             })
                         }

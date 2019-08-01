@@ -42,7 +42,7 @@ class page extends Component {
         let { banner, channel, brandList, categoryList, hotGoodsList, newGoodsList, topicList } = this.props.pages.pageData;
         return (
             <section className="bcColor">
-                <Swipers {...this.props} data={banner} />
+                <Swipers height={4.4} {...this.props} data={banner} />
                 <ul className="goods_category">
                     {
                         channel && channel.map((item) => {

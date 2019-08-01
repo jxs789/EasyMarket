@@ -1,19 +1,12 @@
 import { getClassify, getRight, getSearch, getKeyword, delHistory, getGoodLists } from '../../services/index'
 import { observable, action } from 'mobx'
-
 class Classify {
-    @observable classifyData
-    @observable rightData
-    @observable searchData
-    @observable keywordData
-    @observable goodlistData
-    constructor() {
-        this.classifyData = []
-        this.rightData = []
-        this.searchData = []
-        this.keywordData = []
-        this.goodlistData=[]
-    }
+    @observable classifyData = []
+    @observable rightData = []
+    @observable searchData = []
+    @observable keywordData = []
+    @observable goodlistData = []
+
     @action async get_Classify() {
         let res = await getClassify();
         this.classifyData = res.data
@@ -38,15 +31,13 @@ class Classify {
 
     //删除历史记录
     @action async del_History() {
-        let res = await delHistory();
+        await delHistory();
         // console.log(res)
     }
 
     //根据分类Id或者制造商Id获取商品
     @action async getGood_data(params) {
-        console.log(params)
         let data = await getGoodLists(params)
-        console.log(data)
         this.goodlistData = data.data.goodsList
     }
 }

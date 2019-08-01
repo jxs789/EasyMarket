@@ -1,17 +1,10 @@
 import { getSpecial, getDetail, getComment, getRelated, addMessage } from '../../services/index'
 import { observable, action } from 'mobx'
-
 class Special {
-    @observable specialData
-    @observable detailData
-    @observable commentData
-    @observable relatedData
-    constructor() {
-        this.specialData = []
-        this.detailData = []
-        this.commentData = []
-        this.relatedData = []
-    }
+    @observable specialData = []
+    @observable detailData = []
+    @observable commentData = []
+    @observable relatedData = []
     //专题
     @action async get_special() {
         let res = await getSpecial();

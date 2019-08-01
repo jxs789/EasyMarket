@@ -25,10 +25,14 @@
   }
   .cartGoodsListWrap {
     flex: 1;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
-    overflow: scroll;
+    // overflow: scroll;
+    & > div {
+      padding-bottom: 1.4rem;
+    }
     .cartItem {
       display: flex;
       height: 2.2rem;
@@ -75,6 +79,70 @@
           width: auto;
         }
       }
+      .cartGoodEditWrap {
+        //完成的样式
+        flex: 1;
+        min-width: 0;
+        .cartEditSizeName {
+          font-size: 0.3rem;
+        }
+        .cartEditNum {
+          .price {
+            color: red;
+          }
+        }
+        .cartGoodEditWrap > div {
+          height: 50%;
+          display: flex;
+          align-items: center;
+          width: 100%;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          padding-left: 0.2rem;
+        }
+        & > div {
+          height: 50%;
+          display: flex;
+          align-items: center;
+          width: 100%;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          padding-left: 0.2rem;
+        }
+        .cartEditNum div:nth-child(2) {
+          display: flex;
+          flex: 1;
+          flex-direction: row-reverse;
+          & > .countOp div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.5rem;
+          }
+        }
+        .cartEditNum div:nth-child(2) .countOp {
+          width: auto;
+          display: flex;
+
+          & > div:nth-child(1),
+          & > div:nth-child(3) {
+            width: 0.6rem;
+            height: 0.6rem;
+            border: 1px solid gainsboro;
+          }
+          & > div:nth-child(2) {
+            min-width: 1rem;
+            height: 0.6rem;
+            padding: 0 0.2rem;
+            font-size: 0.32rem;
+            border: 1px solid gainsboro;
+            border-right: none;
+            border-left: none;
+          }
+        }
+      }
     }
   }
   .cartGoodsDo {
@@ -90,30 +158,20 @@
     justify-content: space-between;
     box-shadow: 0 -3px 10px 0 rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    .isItem {
-      width: 0.4rem;
-      line-height: 0.4rem;
-
+    .isCheckItem {
+      width: 0.8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       img {
         width: 0.38rem;
-        margin: 0.3rem 0 0 0.2rem;
         height: auto;
       }
     }
-    // .isCheckItem {
-    //   width: 0.4rem;
-    //   display: flex;
-    //   justify-content: center;
-    //   align-items: center;
-    //   img {
-    //     width: 0.38rem;
-    //     height: auto;
-    //   }
     .cartMsgAll {
       flex: 1;
       line-height: 1.1rem;
       font-size: 0.3rem;
-      margin-left: 0.3rem;
     }
     .cartAllDoButton {
       width: auto;
@@ -131,4 +189,3 @@
     }
   }
 }
-// }

@@ -6,6 +6,12 @@ import "./index.scss"
 @observer
 
 class special extends Component {
+    componentDidMount() {
+        this.props.special.get_special()
+    }
+    gotoDetail = (id, title) => {
+        this.props.history.push(`/specialDetail/${id}`, { params: { title } })
+    }
     render() {
         let { specialData } = this.props.special;
         let { recommend } = this.props;
@@ -38,12 +44,5 @@ class special extends Component {
             </section>
         )
     }
-    componentDidMount() {
-        this.props.special.get_special()
-    }
-    gotoDetail = (id, title) => {
-        this.props.history.push(`/specialDetail/${id}`, { params: { title } })
-    }
 }
-
 export default special

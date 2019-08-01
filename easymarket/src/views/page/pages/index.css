@@ -153,40 +153,6 @@
   padding: 0 0.2rem;
 }
 
-.bcColor .hotGoodsBox .hotGoodsWrap .hotGoodsItem {
-  height: 3rem;
-  position: relative;
-  display: flex;
-  border-top: 1px solid darkgray;
-}
-
-.bcColor .hotGoodsBox .hotGoodsWrap .hotGoodsItem .imgLazyload {
-  width: auto;
-  height: 100%;
-}
-
-.bcColor .hotGoodsBox .hotGoodsWrap .hotGoodsItem .hotGoodsInfos {
-  flex: 1;
-  padding: 0.5rem 0;
-}
-
-.bcColor .hotGoodsBox .hotGoodsWrap .hotGoodsItem .hotGoodsInfos .hotGoodsName {
-  font-size: 0.32rem;
-  padding: 0.1rem 0;
-}
-
-.bcColor .hotGoodsBox .hotGoodsWrap .hotGoodsItem .hotGoodsInfos .hotGoodsInfo {
-  color: darkgray;
-  font-size: 0.28rem;
-  padding: 0.1rem 0;
-}
-
-.bcColor .hotGoodsBox .hotGoodsWrap .hotGoodsItem .hotGoodsInfos .hotGoodsPrice {
-  color: darkred;
-  font-size: 0.3rem;
-  padding: 0.1rem 0;
-}
-
 .bcColor .topGoodsBox {
   margin-top: 0.2rem;
   background: white;
