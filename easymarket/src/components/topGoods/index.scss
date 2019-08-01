@@ -1,0 +1,49 @@
+.am-wingblank,
+.am-wingblank-lg {
+  width: 100%;
+  height: 8rem;
+  overflow: hidden;
+  margin-left: -15px;
+  margin-right: -15px;
+  .slider,
+  .am-carousel,
+  .space-carousel {
+    .slider-frame {
+      .slider-list {
+        .slider-slide {
+          a {
+            img {
+              width: 100%;
+              height: 4rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.space-carousel {
+  padding: 0.1rem 0;
+}
+
+.topGoodsItem {
+  line-height: 0.5rem;
+  .imgLazyload {
+    height: 4rem;
+    width: 100%;
+  }
+  .topGoodSubTitle {
+    .topGoodPrice {
+      color: darkred;
+    }
+  }
+  > .nofont {
+    color: gray;
+    text-align: left;
+    font-size: 0.24rem;
+    font-weight: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

@@ -7,7 +7,7 @@ import Bs from "better-scroll"
 @inject("pages")
 @observer
 class ShoppingCar extends Component {
-    constructor(props) {
+    constructor() {
         super();
         this.state = {
             redact: 0,
@@ -59,10 +59,8 @@ class ShoppingCar extends Component {
         Toast.loading('下单功能还未GET,耐心等待~', 1, () => {
         });
     }
-    gotoDetail = (id, item) => {
-        console.log(item)
+    gotoDetail = (id) => {
         this.props.history.push(`/goods/${id}`)
-        console.log(id)
     }
     render() {
         let { cartList } = this.props.pages.caraddcont
@@ -102,7 +100,7 @@ class ShoppingCar extends Component {
                                 return (
                                     <div className="cartItem" key={item.goods_id} >
                                         <IscheckItem {...this.props} iFlag={item.checked} click={this.highlight.bind(this, item.goods_id)} />
-                                        <div className="goodsImg" onClick={() => this.gotoDetail(item.goods_id, item)}>
+                                        <div className="goodsImg" onClick={() => this.gotoDetail(item.goods_id)}>
                                             <img src={item.list_pic_url} alt="" />
                                         </div>
                                         {

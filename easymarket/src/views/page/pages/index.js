@@ -4,7 +4,7 @@ import Swipers from "../../../components/swiper"
 import { inject, observer } from "mobx-react";
 import 'swiper/dist/css/swiper.min.css'
 import BrandCont from "../../../components/brandCont"
-import Swiper from 'swiper'
+// import Swiper from 'swiper'
 import NewGoods from '../../../components/newGoods';
 import HotGoods from "../../../components/hotGoods"
 import TopGoods from "../../../components/topGoods";
@@ -19,15 +19,15 @@ class page extends Component {
         this.state = {};
     }
     componentDidUpdate() {
-        new Swiper(this.refs.swiper, {
-            slidesPerView: 1.2,
-            spaceBetween: 10,
-            centeredSlides: true,
-            loop: true,
-            roundLengths: true,
-            observer: true, //当siper内容改变后，从新计算宽高      没有这个会出现无法拖动的情况     //猪儿，好好敲，我回班了
-            observeParents: true,//当siper父盒子改变后，从新计算宽高  因为父盒子一般都不是用数据渲染的，这条一般不用加  
-        })
+        // new Swiper(this.refs.swiper, {
+        //     slidesPerView: 1.2,
+        //     spaceBetween: 10,
+        //     centeredSlides: true,
+        //     loop: true,
+        //     roundLengths: true,
+        //     observer: true, //当siper内容改变后，从新计算宽高      没有这个会出现无法拖动的情况     //猪儿，好好敲，我回班了
+        //     observeParents: true,//当siper父盒子改变后，从新计算宽高  因为父盒子一般都不是用数据渲染的，这条一般不用加  
+        // })
     }
     componentDidMount() {
         this.props.pages.getpages_data();
@@ -91,17 +91,7 @@ class page extends Component {
                 <div className="topGoodsBox">
                     <div className="topGoodsTitle">专题精选</div>
                     <div className="topGoodsWrap">
-                        <div className="swiper-container" ref='swiper'>
-                            <div className="swiper-wrapper">
-                                {
-                                    topicList && topicList.map((item) => {
-                                        return (
-                                            <TopGoods  {...this.props} key={item.id} item={item}></TopGoods>
-                                        )
-                                    })
-                                }
-                            </div>
-                        </div>
+                        <TopGoods  {...this.props} item={topicList}></TopGoods>
                     </div>
                 </div>
                 <div className='cateGoryBox'>
