@@ -59,7 +59,6 @@ class Classify extends Component {
                                                                 offSetTop={-110}
                                                                 realUrl={item.wap_banner_url}>
                                                             </ImgLazyLoad>
-                                                            {/* <img src={item.wap_banner_url} alt="" /> */}
                                                         </dt>
                                                         <dd>{item.name}</dd>
                                                     </dl>

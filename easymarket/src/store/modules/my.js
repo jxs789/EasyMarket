@@ -9,7 +9,6 @@ class My {
         this.collectData = []
         this.addressData = []
         this.siteData = []
-        this.delData={}
     }
     //收藏栏
     @action async get_Collect(typeId) {
@@ -19,6 +18,7 @@ class My {
     //获取用户地址数据
     @action async get_Address() {
         let res = await getAddress();
+        console.log(res)
         this.addressData = res.data
     }
     //新增地址
@@ -30,7 +30,6 @@ class My {
     @action async del_Site(id) {
         let res = await delSite(id);
         this.delData=res
-        console.log(this.delData)
         this.get_Address()
     }
 }
