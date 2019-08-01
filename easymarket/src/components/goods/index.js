@@ -105,7 +105,6 @@ class Goods extends Component {
     }
     loadingToast() {
         Toast.loading('下单功能还未GET,耐心等待~', 1, () => {
-            console.log('Load complete !!!');
         });
     }
     render() {

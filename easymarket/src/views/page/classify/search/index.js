@@ -21,9 +21,7 @@ class index extends Component {
         this.props.classify.get_Search()
         this.props.classify.get_Keyword()
     }
-    componentDidUpdate() {
-        // this.props.classify.get_Search()
-    }
+
     handelChange = (e) => {
         this.setState({
             value: e.target.value
@@ -75,10 +73,7 @@ class index extends Component {
         })
         this.props.classify.getGood_data({ keyword: value })
     }
-    // //点击全部
-    // all = () => {
 
-    // }
     render() {
         let { searchData: { defaultKeyword, historyKeywordList, hotKeywordList }, keywordData, goodlistData } = this.props.classify;
         let { value, flag, mask } = this.state;
@@ -112,7 +107,7 @@ class index extends Component {
                                 <div className='nav_box'>
                                     <span>综合</span>
                                     <span>价格<i className='iconfont icon-paixu2'></i></span>
-                                    <span onClick={() => this.all()}>全部分类</span>
+                                    <span>全部分类</span>
                                 </div>
                                 <div className='mask_box'>
                                     <p>全部</p>
@@ -213,10 +208,6 @@ class index extends Component {
         })
         this.props.classify.getGood_data({ keyword: value })
     }
-    // //点击全部
-    // all = () => {
-
-    // }
 }
 
 export default index;

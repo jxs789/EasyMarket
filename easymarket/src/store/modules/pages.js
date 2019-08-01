@@ -58,14 +58,12 @@ export default class Pages {
     //根据专题ID或者商品ID获取评论获取相关专题
     @action async getCommentList_data({ valueId, typeId, size, page }) {
         let data = await getCommentList({ valueId, typeId, size, page })
-        // console.log(data);
         this.commentListData = data.data.data;
     }
 
     //添加到购物车
     @action async getCartAdd_data({ goodsId, productId, number, }) {
-        let data = await getCartAdd({ goodsId, productId, number, })
-
+        await getCartAdd({ goodsId, productId, number, })
     }
     //获取用户购物车数据
     @action async getCartIndex_data() {
@@ -76,7 +74,6 @@ export default class Pages {
     //是否添加到收藏栏
     @action async getcollectDaddordelete_data({ typeId, valueId }) {
         let data = await getcollectDaddordelete({ typeId, valueId })
-        console.log(data.data, 666)
         this.collect = data.data
     }
 
@@ -104,28 +101,19 @@ export default class Pages {
         this.caraddcont.cartList = this.caraddcont.cartList.map((item) => {
             item.checked = 0
             return item
-
         })
     }
 
     //商品数加加减减
     @action.bound async getCalculate(id, compute) {
         let inde = this.caraddcont.cartList.findIndex((item) => {
-            return item.goods_id == id
+            return item.goods_id === id
         })
-        if (this.caraddcont.cartList[inde].number == 0) {
+        if (this.caraddcont.cartList[inde].number === 0) {
             return
         }
         this.caraddcont.cartList[inde].number += compute
-        // if (compute == 0) {
-        //     if (this.caraddcont.cartList[inde].number == 0) {
-        //         return
-        //     }
-        //     this.caraddcont.cartList[inde].number = this.caraddcont.cartList[inde].number -= 1
 
-        // } else if (compute == 1) {
-        //     this.caraddcont.cartList[inde].number = this.caraddcont.cartList[inde].number += 1
-        // }
     }
 
     //删除商品
@@ -134,6 +122,5 @@ export default class Pages {
             return item.checked == 0
         })
     }
-
 
 }

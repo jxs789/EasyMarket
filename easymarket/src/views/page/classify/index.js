@@ -4,11 +4,8 @@ import { observer, inject } from "mobx-react"
 import { NavLink } from 'react-router-dom'
 import ImgLazyLoad from '../../../components/imgLazyLoad'
 
-
 @inject("classify")
 @observer
-// @inject("pages")
-// @observer
 
 class Classify extends Component {
     constructor() {

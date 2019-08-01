@@ -45,16 +45,10 @@ class ShoppingCar extends Component {
     }
     //减少
     decreaseCar(id) {
-        // this.setState({
-        //     compute: 0
-        // })
         this.props.pages.getCalculate(id, -1)
     }
     //增加
     increaseCar(id) {
-        // this.setState({
-        //     compute: 1
-        // })
         this.props.pages.getCalculate(id, +1)
     }
     del() {
@@ -63,8 +57,12 @@ class ShoppingCar extends Component {
     //下单
     loadingToast() {
         Toast.loading('下单功能还未GET,耐心等待~', 1, () => {
-            console.log('Load complete !!!');
         });
+    }
+    gotoDetail=(id,item)=>{
+        console.log(item)
+        this.props.history.push(`/goods/${id}`)
+        console.log(id)
     }
     render() {
         let { cartList, cartTotal } = this.props.pages.caraddcont
@@ -104,35 +102,35 @@ class ShoppingCar extends Component {
                                 return (
                                     <div className="cartItem" key={item.goods_id} >
                                         <IscheckItem {...this.props} iFlag={item.checked} click={this.highlight.bind(this, item.goods_id)} />
-                                        <div className="goodsImg">
-                                            <img src={item.list_pic_url} alt="" />
-                                        </div>
-                                        {
-                                            redact == 0 ?
-                                                <>
-                                                    <div className="cartGoodsMsg">
-                                                        <div>{item.goods_name}</div>
-                                                        <div></div>
-                                                        <div className="price">￥{item.market_price}</div>
-                                                    </div>
-                                                    <div className="cartGoodsNum">x{item.number}</div>
-                                                </>
-                                                :
-                                                <div className="cartGoodEditWrap">
-                                                    <div className="cartEditSizeName">已选择：</div>
-                                                    <div className="cartEditNum">
-                                                        <div className="price">￥{item.market_price}</div>
-                                                        <div>
-                                                            <div className="countOp">
-                                                                <div onClick={this.decreaseCar.bind(this, item.goods_id)}>-</div>
-                                                                <div ref="number">{item.number}</div>
-                                                                <div onClick={this.increaseCar.bind(this, item.goods_id)}>+</div>
+                                            <div className="goodsImg" onClick={()=>this.gotoDetail(item.goods_id,item)}>
+                                                <img src={item.list_pic_url} alt="" />
+                                            </div>
+                                            {
+                                                redact == 0 ?
+                                                    <>
+                                                        <div className="cartGoodsMsg">
+                                                            <div>{item.goods_name}</div>
+                                                            <div></div>
+                                                            <div className="price">￥{item.market_price}</div>
+                                                        </div>
+                                                        <div className="cartGoodsNum">x{item.number}</div>
+                                                    </>
+                                                    :
+                                                    <div className="cartGoodEditWrap">
+                                                        <div className="cartEditSizeName">已选择：</div>
+                                                        <div className="cartEditNum">
+                                                            <div className="price">￥{item.market_price}</div>
+                                                            <div>
+                                                                <div className="countOp">
+                                                                    <div onClick={this.decreaseCar.bind(this, item.goods_id)}>-</div>
+                                                                    <div ref="number">{item.number}</div>
+                                                                    <div onClick={this.increaseCar.bind(this, item.goods_id)}>+</div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                        }
-                                    </div>
+                                            }
+                                        </div>
                                 )
                             }) : null
                         }

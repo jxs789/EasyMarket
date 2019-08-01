@@ -3,12 +3,12 @@ import "./index.scss";
 import Swipers from "../../../components/swiper"
 import { inject, observer } from "mobx-react";
 import 'swiper/dist/css/swiper.min.css'
-import BrandCont from "../../../components/brandCont/"
+import BrandCont from "../../../components/brandCont"
 import Swiper from 'swiper'
 import NewGoods from '../../../components/newGoods';
-import HotGoods from "../../../components/hotGoods/"
-import TopGoods from "../../../components/topGoods/";
-import GoodList from "../../../components/goodsList/";
+import HotGoods from "../../../components/hotGoods"
+import TopGoods from "../../../components/topGoods";
+import GoodList from "../../../components/goodsList";
 
 @inject("pages") //注入模块
 @observer   //监听
@@ -24,6 +24,7 @@ class page extends Component {
             spaceBetween: 10,
             centeredSlides: true,
             loop: true,
+            roundLengths: true,
             // autoplay: {
             //     delay: 1000,//1秒切换一次
             //     disableOnInteraction: false,  //用户操作之后依然可以autoplay

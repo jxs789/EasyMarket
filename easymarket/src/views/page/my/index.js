@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './index.scss'
 import { Toast } from 'antd-mobile';
+import Cookie from 'js-cookie';
+
 
 class My extends Component {
     constructor() {
@@ -80,7 +82,7 @@ class My extends Component {
                 }
                 </div>
                 <div className='exit_btn'>
-                    <button onClick={()=>this.props.history.push('/login')}>退出登录</button>
+                    <button onClick={() => this.gotoLogin()}>退出登录</button>
                 </div>
             </section>
         )
@@ -90,6 +92,13 @@ class My extends Component {
             this.props.history.push(`${item.link}`)
         } else {
             Toast.offline(`${item.name}功能还未解锁，请耐心等候~`, 1);
+        }
+    }
+    gotoLogin = () => {
+        const key = 'x-nideshop-token'
+        Cookie.remove(key)
+        if (!Cookie.get(key)) {
+            this.props.history.push('/login')
         }
     }
 }
