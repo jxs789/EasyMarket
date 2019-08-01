@@ -7,7 +7,7 @@
   padding: 0.2rem;
   width: 100%;
   overflow: hidden;
-  width: 100%;
+  color: #000;
 }
 
 .hotGoodsItem .imgLazyload {
@@ -44,14 +44,10 @@
   width: 60px;
   height: 2.98rem;
   background: red;
-  z-index: 1;
+  z-index: -1;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 0.36rem;
-}
-
-.hotGoodsItem .show {
-  display: none;
 }

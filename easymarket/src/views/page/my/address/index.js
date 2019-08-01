@@ -20,48 +20,6 @@ class index extends Component {
     componentDidMount() {
         this.props.my.get_Address()
     }
-    closeDo = () => {
-        let { flag } = this.state;
-        this.setState({
-            flag: !flag,
-        })
-    }
-    render() {
-        let { addressData, collectData } = this.props.my;
-        let { flag } = this.state;
-        return (
-            <div className='wrap'>
-                {
-                    flag ? <Addressset {...this.props} closeDo={this.closeDo} {...this.state} /> :
-                        <section className='address'>
-                            <Header {...this.props} data={'地址管理'} />
-                            <ul>
-                                {
-                                    // item.is_default
-                                    addressData && addressData.map(item =>
-                                        (
-                                            <li key={item.id} onClick={() => this.showAddress(item)}>
-                                                {item.is_default === 1 && <div className="isChooseAddress" />}
-                                                <div className='li_wrap'>
-                                                    <span>{item.name}</span>
-                                                    <div>
-                                                        <div>{item.mobile}</div>
-                                                        <p><span>{item.full_region}</span><i onClick={(e) => this.delSite(e, item.id)} className='iconfont icon-lajitong'></i></p>
-                                                        <p>{item.address}</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        ))
-                                }
-                            </ul>
-                            <div className='addRess'>
-                                <Button type="primary" onClick={() => this.addAddress()}>新建地址</Button>
-                            </div>
-                        </section>
-                }
-            </div>
-        );
-    }
 
     closeModel = () => {
         let { visibleFlag } = this.state;
@@ -101,6 +59,48 @@ class index extends Component {
         Toast.success('删除成功!', 1);
     }
 
+    closeDo = () => {
+        let { flag } = this.state;
+        this.setState({
+            flag: !flag,
+        })
+    }
+    render() {
+        let { addressData } = this.props.my;
+        let { flag } = this.state;
+        return (
+            <div className='wrap'>
+                {
+                    flag ? <Addressset {...this.props} closeDo={this.closeDo} {...this.state} /> :
+                        <section className='address'>
+                            <Header {...this.props} data={'地址管理'} />
+                            <ul>
+                                {
+                                    // item.is_default
+                                    addressData && addressData.map(item =>
+                                        (
+                                            <li key={item.id} onClick={() => this.showAddress(item)}>
+                                                {item.is_default === 1 && <div className="isChooseAddress" />}
+                                                <div className='li_wrap'>
+                                                    <span>{item.name}</span>
+                                                    <div>
+                                                        <div>{item.mobile}</div>
+                                                        <p><span>{item.full_region}</span><i onClick={(e) => this.delSite(e, item.id)} className='iconfont icon-lajitong'></i></p>
+                                                        <p>{item.address}</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        ))
+                                }
+                            </ul>
+                            <div className='addRess'>
+                                <Button type="primary" onClick={() => this.addAddress()}>新建地址</Button>
+                            </div>
+                        </section>
+                }
+            </div>
+        );
+    }
 }
 
 export default index;

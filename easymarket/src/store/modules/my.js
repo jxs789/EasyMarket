@@ -29,8 +29,18 @@ class My {
     //删除数据
     @action async del_Site(id) {
         let res = await delSite(id);
-        this.delData=res
+        this.delData = res
         this.get_Address()
+    }
+    //滑动更改状态
+    @action async set_collect(index) {
+        let arr = this.collectData.map((item) => {
+            item.isClose = false
+            return item
+        })
+        arr[index].isClose = true;
+        this.collectData = arr
+        console.log(this.collectData, 2)
     }
 }
 

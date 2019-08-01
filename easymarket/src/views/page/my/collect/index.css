@@ -3,8 +3,6 @@
   flex-direction: column;
   width: 100%;
   padding: 0 0.2rem;
-  width: 100%;
-  padding: 0 0.2rem;
   background: white;
 }
 
@@ -19,7 +17,73 @@
   background: #f5f5f9;
 }
 
-.left {
-  -webkit-transform: translateX(-60px);
-  transform: translateX(-60px);
+.touchClear .hotGoodsItem {
+  width: 100%;
+  height: 2.2rem;
+  display: flex;
+  color: black;
+  background: white;
+  overflow: hidden;
+}
+
+.touchClear .hotGoodsItem > div {
+  width: 100%;
+  height: 100%;
+}
+
+.touchClear .hotGoodsItem .imgLazyload {
+  width: auto;
+  height: 100%;
+}
+
+.touchClear .hotGoodsItem .hotGoodsInfos {
+  padding: 0.2rem 0;
+}
+
+.touchClear .hotGoodsItem .hotGoodsInfos .hotGoodsName {
+  font-size: 0.32rem;
+  margin-bottom: 0.1rem;
+}
+
+.touchClear .hotGoodsItem .hotGoodsInfos .hotGoodsInfo {
+  color: darkgray;
+  font-size: 0.29rem;
+  padding: 0.1rem 0;
+}
+
+.touchClear .hotGoodsItem .hotGoodsInfos .hotGoodsPrice {
+  color: darkred;
+  font-size: 0.3rem;
+  padding: 0.1rem 0;
+}
+
+.touchClear .hotGoodsItem .colse {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 2.98rem;
+  background: red;
+  z-index: -1;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.36rem;
+}
+
+.touchClear .am-swipe-content {
+  width: 100%;
+  height: 2.4rem;
+}
+
+.touchClear .am-swipe-content .am-list-line {
+  display: flex;
+  border-top: 1px solid #f5f5f9;
+  width: 100%;
+  height: 100%;
+}
+
+.touchClear .am-swipe-content .am-list-line .am-list-content {
+  width: 100%;
 }

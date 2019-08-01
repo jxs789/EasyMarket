@@ -81,9 +81,9 @@ export default class Pages {
     //单选
     @action.bound async getIsChecked(id) {
         let inde = this.caraddcont.cartList.findIndex((item) => {
-            return item.goods_id == id
+            return item.goods_id === id
         })
-        this.caraddcont.cartList[inde].checked = this.caraddcont.cartList[inde].checked == 1 ? 0 : 1
+        this.caraddcont.cartList[inde].checked = this.caraddcont.cartList[inde].checked === 1 ? 0 : 1
     }
 
     //全选
@@ -119,7 +119,7 @@ export default class Pages {
     //删除商品
     @action.bound async delete(id) {
         this.caraddcont.cartList = this.caraddcont.cartList.filter((item, index) => {
-            return item.checked == 0
+            return item.checked === 0
         })
     }
 

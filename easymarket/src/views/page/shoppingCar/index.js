@@ -59,32 +59,32 @@ class ShoppingCar extends Component {
         Toast.loading('下单功能还未GET,耐心等待~', 1, () => {
         });
     }
-    gotoDetail=(id,item)=>{
+    gotoDetail = (id, item) => {
         console.log(item)
         this.props.history.push(`/goods/${id}`)
         console.log(id)
     }
     render() {
-        let { cartList, cartTotal } = this.props.pages.caraddcont
+        let { cartList } = this.props.pages.caraddcont
         let { redact } = this.state
         //判断上边是否全部选中状态，让下面也全部选中
         let isFlag = cartList && cartList.length !== 0 ? cartList.some(item => {
-            return item.checked != 1
+            return item.checked !== 1
         }) : null
         //总个数
         let aggregateNum = cartList ? cartList.reduce((pre, cur) => {
-            pre += cur.checked == 1 ? cur.number : 0
+            pre += cur.checked === 1 ? cur.number : 0
             return pre
         }, 0) : 0
         ////总计
         let aggregate = cartList ? cartList.reduce((pre, cur) => {
-            pre += cur.checked == 1 ? cur.number * cur.market_price : 0
+            pre += cur.checked === 1 ? (cur.number) * (cur.market_price) : 0
             return pre
         }, 0) : 0
         //删除的时候选中的个数
         let cartMsNum = 0;
         cartList && cartList.forEach((item) => {
-            if (item.checked == 1) {
+            if (item.checked === 1) {
                 cartMsNum += 1
             }
         })
@@ -102,35 +102,35 @@ class ShoppingCar extends Component {
                                 return (
                                     <div className="cartItem" key={item.goods_id} >
                                         <IscheckItem {...this.props} iFlag={item.checked} click={this.highlight.bind(this, item.goods_id)} />
-                                            <div className="goodsImg" onClick={()=>this.gotoDetail(item.goods_id,item)}>
-                                                <img src={item.list_pic_url} alt="" />
-                                            </div>
-                                            {
-                                                redact == 0 ?
-                                                    <>
-                                                        <div className="cartGoodsMsg">
-                                                            <div>{item.goods_name}</div>
-                                                            <div></div>
-                                                            <div className="price">￥{item.market_price}</div>
-                                                        </div>
-                                                        <div className="cartGoodsNum">x{item.number}</div>
-                                                    </>
-                                                    :
-                                                    <div className="cartGoodEditWrap">
-                                                        <div className="cartEditSizeName">已选择：</div>
-                                                        <div className="cartEditNum">
-                                                            <div className="price">￥{item.market_price}</div>
-                                                            <div>
-                                                                <div className="countOp">
-                                                                    <div onClick={this.decreaseCar.bind(this, item.goods_id)}>-</div>
-                                                                    <div ref="number">{item.number}</div>
-                                                                    <div onClick={this.increaseCar.bind(this, item.goods_id)}>+</div>
-                                                                </div>
+                                        <div className="goodsImg" onClick={() => this.gotoDetail(item.goods_id, item)}>
+                                            <img src={item.list_pic_url} alt="" />
+                                        </div>
+                                        {
+                                            redact === 0 ?
+                                                <>
+                                                    <div className="cartGoodsMsg">
+                                                        <div>{item.goods_name}</div>
+                                                        <div></div>
+                                                        <div className="price">￥{item.market_price}</div>
+                                                    </div>
+                                                    <div className="cartGoodsNum">x{item.number}</div>
+                                                </>
+                                                :
+                                                <div className="cartGoodEditWrap">
+                                                    <div className="cartEditSizeName">已选择：</div>
+                                                    <div className="cartEditNum">
+                                                        <div className="price">￥{item.market_price}</div>
+                                                        <div>
+                                                            <div className="countOp">
+                                                                <div onClick={this.decreaseCar.bind(this, item.goods_id)}>-</div>
+                                                                <div ref="number">{item.number}</div>
+                                                                <div onClick={this.increaseCar.bind(this, item.goods_id)}>+</div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                            }
-                                        </div>
+                                                </div>
+                                        }
+                                    </div>
                                 )
                             }) : null
                         }
