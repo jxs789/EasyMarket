@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-export default class TopGoods extends Component {
+class TopGoods extends Component {
     gotoDetail = (id, title) => {
         this.props.history.push(`/specialDetail/${id}`, { params: { title: title } })
     }
@@ -17,3 +17,4 @@ export default class TopGoods extends Component {
     }
 
 }
+export default TopGoods

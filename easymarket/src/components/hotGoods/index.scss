@@ -16,6 +16,7 @@
   .hotGoodsInfos {
     flex: 1;
     padding: 0.5rem 0;
+
     .hotGoodsName {
       font-size: 0.32rem;
       padding: 0.1rem 0;
@@ -38,14 +39,11 @@
     width: 60px;
     height: 2.98rem;
     background: red;
-    z-index: 1;
+    z-index: -1;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 0.36rem;
-  }
-  .show {
-    display: none;
   }
 }

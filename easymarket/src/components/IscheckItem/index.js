@@ -9,7 +9,7 @@ class IsCheckItem extends Component {
 
             <div className="isCheckItem" onClick={this.props.click}>
                 <div>
-                    <img src={iFlag == 1 ? isCheck : noCheck} alt="" />
+                    <img src={iFlag === 1 ? isCheck : noCheck} alt="" />
                 </div>
             </div>
 

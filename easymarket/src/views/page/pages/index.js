@@ -85,7 +85,7 @@ class page extends Component {
                         {
                             hotGoodsList && hotGoodsList.map((item) => {
                                 return (
-                                    <HotGoods  {...this.props} key={item.id} item={item} />
+                                    <HotGoods  {...this.props} key={item.id} item={item} type={0} />
                                 )
                             })
                         }

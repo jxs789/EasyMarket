@@ -10,6 +10,7 @@ import CommentItem from "../commentItem/"
 @inject("pages")
 @inject("my")
 @observer
+@observer
 class Goods extends Component {
     constructor(props) {
         super(props);
@@ -110,7 +111,7 @@ class Goods extends Component {
     }
     render() {
 
-        let { info, issue, gallery, attribute, brand, comment, specificationList, productList, userHasCollect } = this.props.pages.goodsDetail;
+        let { info, issue, gallery, attribute, brand, comment, specificationList } = this.props.pages.goodsDetail;
         let { goodsrelated, carContnum } = this.props.pages
         return (
             <div className="wrap goodsBox" >
