@@ -23,6 +23,7 @@ class index extends Component {
                 <section className="HotGoods">
                     {
                         collectData && collectData.map((item) => {
+                            console.log(item)
                             return (
                                 <HotGoods  {...this.props} key={item.id} item={item} />
                             )

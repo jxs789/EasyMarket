@@ -37,7 +37,6 @@ class Goods extends Component {
         this.setState({
             userHasCollect
         })
-        console.log(userHasCollect, 8888)
     }
     showModal() {
         this.setState({
@@ -112,7 +111,6 @@ class Goods extends Component {
     render() {
 
         let { info, issue, gallery, attribute, brand, comment, specificationList, productList, userHasCollect } = this.props.pages.goodsDetail;
-        console.log(userHasCollect, 77)
         let { goodsrelated, carContnum } = this.props.pages
         return (
             <div className="wrap goodsBox" >
