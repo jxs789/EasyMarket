@@ -21,18 +21,16 @@ class index extends Component {
             <div className="wrap">
                 <Header data={"easyLikeGoods"} {...this.props}></Header>
                 <section className="HotGoods">
-                    {
-                        collectData && collectData.map((item) => {
-                            console.log(item)
-                            return (
-                                <HotGoods  {...this.props} key={item.id} item={item} />
-                            )
+                    <div className="touchClear">
+                        {collectData && collectData.map((item) => {
+                            return (<HotGoods  {...this.props} key={item.id} item={item} id={item.value_id} />)
+                        }
+                        )}
 
-                        })
-                    }
+                    </div>
                 </section>
 
-            </div>
+            </div >
         );
     }
 

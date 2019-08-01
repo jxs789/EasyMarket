@@ -80,7 +80,7 @@ class My extends Component {
                 }
                 </div>
                 <div className='exit_btn'>
-                    <button>退出登录</button>
+                    <button onClick={()=>this.props.history.push('/login')}>退出登录</button>
                 </div>
             </section>
         )

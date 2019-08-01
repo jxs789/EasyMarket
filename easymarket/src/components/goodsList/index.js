@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-// import { inject, observer } from "mobx-react"
 import "./index.scss"
+import ImgLazyLoad from '../imgLazyLoad'
 
 class GoodList extends Component {
     componentDidMount() {
@@ -11,7 +11,10 @@ class GoodList extends Component {
         return (
             <a className="goodsItem" href={`/goods/${id}`}>
                 <div className="goodsItemImg">
-                    <img className="imgLazyload loadEnd" src={list_pic_url} alt="imgLazyLoad" />
+                    <ImgLazyLoad className="imgLazyload loadEnd"
+                        offSetTop={44}
+                        realUrl={list_pic_url}>
+                    </ImgLazyLoad>
                 </div><div className="goodsItemName">{name}</div><div className="goodsItemPrice">￥{retail_price}元</div></a>
         )
 

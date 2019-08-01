@@ -11,6 +11,7 @@ class HotGoods extends Component {
                         <div className="hotGoodsName">{item.name}</div>
                         <div className="hotGoodsInfo">{item.goods_brief}</div>
                         <div className="hotGoodsPrice">￥{item.retail_price}</div>
+                        < div className="colse show">删除</div>
                     </div>
                 </a>
             </>

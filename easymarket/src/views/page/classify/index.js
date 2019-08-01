@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import './index.scss'
 import { observer, inject } from "mobx-react"
 import { NavLink } from 'react-router-dom'
+import ImgLazyLoad from '../../../components/imgLazyLoad'
+
 
 @inject("classify")
 @observer
@@ -52,7 +54,13 @@ class Classify extends Component {
                                             {rightData.currentCategory && rightData.currentCategory.subCategoryList.map(item => (
                                                 <NavLink to={`/channelClassify/${item.id}`} key={item.id}>
                                                     <dl>
-                                                        <dt><img src={item.wap_banner_url} alt="" /></dt>
+                                                        <dt>
+                                                            <ImgLazyLoad
+                                                                offSetTop={-110}
+                                                                realUrl={item.wap_banner_url}>
+                                                            </ImgLazyLoad>
+                                                            {/* <img src={item.wap_banner_url} alt="" /> */}
+                                                        </dt>
                                                         <dd>{item.name}</dd>
                                                     </dl>
                                                 </NavLink>

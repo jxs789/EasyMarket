@@ -14,7 +14,7 @@ class index extends Component {
         this.state = {
             value: '',
             flag: true,
-            mask: true
+            mask: true,
         };
     }
     componentDidMount() {
@@ -100,8 +100,8 @@ class index extends Component {
                 </header>
                 <section className='seach_count'>
                     {
-                        keywordData && keywordData.length > 0 && flag ?
-                            <div className='show'>
+                        value ?
+                            <div className='show' style={flag ? { display: 'block' } : { display: 'none' }}>
                                 <div className='mask'>
                                     {
                                         keywordData.map((item, index) => (
@@ -127,7 +127,7 @@ class index extends Component {
                                 </div>
                             </div>
                             : <div style={flag ? { display: 'block' } : { display: 'none' }} >
-                                <div className='seach_past' style={mask ? { display: 'block' } : { display: 'none' }}>
+                                <div className='seach_past' style={mask ? { display: 'none' } : { display: 'block' }}>
                                     <ul>
                                         <li>历史记录</li>
                                         <li className='iconfont icon-lajitong' onClick={() => this.del()}></li>
@@ -160,6 +160,63 @@ class index extends Component {
             </div>
         );
     }
+
+    handelChange = (e) => {
+        this.setState({
+            value: e.target.value
+        })
+        if (!this.state.value) {
+            this.setState({
+                flag: true
+            })
+        }
+    }
+    handelSearch = (e) => {
+        if (e.target.value) {
+            this.props.classify.get_Keyword(this.state.value)
+        }
+        if (e.keyCode === 13) {
+            if (this.state.value) {
+                this.props.classify.getGood_data({ keyword: this.state.value })
+            } else {
+                Toast.fail('请输入内容!', 1);
+            }
+        }
+    }
+    //删除
+    del = () => {
+        this.setState({
+            mask: false
+        })
+        this.props.classify.del_History()
+    }
+
+    //下面
+    gotogoods = () => {
+        if (this.state.value) {
+            this.props.classify.getGood_data({ keyword: this.state.value })
+        }
+    }
+    //取消
+    cancel = () => {
+        this.setState({
+            value: '',
+
+        })
+        this.props.classify.getGood_data({ keyword: this.state.value })
+    }
+    //点击热门点击历史
+    addKeyword = (value) => {
+        this.setState({
+            value,
+            flag: true
+        })
+        this.props.classify.getGood_data({ keyword: value })
+    }
+    // //点击全部
+    // all = () => {
+
+    // }
 }
 
 export default index;
