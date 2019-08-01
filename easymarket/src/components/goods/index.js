@@ -37,7 +37,6 @@ class Goods extends Component {
         this.setState({
             userHasCollect
         })
-        console.log(userHasCollect, 8888)
     }
     showModal() {
         this.setState({
