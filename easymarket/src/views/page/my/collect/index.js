@@ -24,10 +24,6 @@ class index extends Component {
                     <div className="touchClear">
                         {collectData && collectData.map((item) => {
                             return (<HotGoods  {...this.props} key={item.id} item={item} id={item.value_id} />)
-
-
-
-
                         }
                         )}
 
