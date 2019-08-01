@@ -5,8 +5,10 @@ import GoodsList from "../../../../components/goodsList"
 import { Tabs } from 'antd-mobile';
 import BS from "better-scroll";
 import "./index.scss"
+
 @inject("pages")
 @observer
+
 class ChannelClassify extends Component {
     constructor() {
         super();

@@ -3,7 +3,11 @@
   }
   .address {
     width: 100%;
+    display: flex;
+    flex-direction: column;
     ul {
+      flex: 1;
+      overflow: scroll;
       background: #fff;
       li:nth-child(1) {
         background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAKCAMAAADfAc3wAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAYUExURc2AgICg1v///+rw+ffq6tKMjI2p2ouo2QT3I5MAAAA9SURBVCjPpcs5EgAgCARB5ND//9jEYwlZJp1q0ZTNAS3L10OgcGlYlYZNuGoRly3guv2YsA8z9mLKHsxZ3e5sBBsNqhCTAAAAAElFTkSuQmCC)
@@ -23,7 +27,7 @@
         }
         .li_wrap {
           display: flex;
-          padding: 0.2rem 0.5rem;
+          padding: 0.15rem 0.5rem;
 
           > span {
             width: 20%;
@@ -32,7 +36,7 @@
           }
           > div {
             width: 80%;
-            line-height: 0.5rem;
+            line-height: 0.45rem;
             p {
               display: flex;
               justify-content: space-between;
@@ -58,13 +62,13 @@
         }
       }
     }
-    .closeAddress {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      a {
-        width: 50%;
-      }
-    }
   }
+}
+
+.am-modal-mask {
+}
+.am-modal-wrap {
+}
+.am-modal-content{
+height:3rem;
 }

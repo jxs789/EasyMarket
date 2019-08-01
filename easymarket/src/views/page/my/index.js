@@ -80,14 +80,13 @@ class My extends Component {
                 }
                 </div>
                 <div className='exit_btn'>
-                    <button>退出登录</button>
+                    <button onClick={()=>this.props.history.push('/login')}>退出登录</button>
                 </div>
             </section>
         )
     }
     handelClick = (item) => {
         if (item.link) {
-            console.log(item.link)
             this.props.history.push(`${item.link}`)
         } else {
             Toast.offline(`${item.name}功能还未解锁，请耐心等候~`, 1);

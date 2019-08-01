@@ -9,3 +9,14 @@ export function getCollect(typeId) {
 export function getAddress() {
     return request.get('/address/list');
 }
+
+//新增地址
+export function addSite(params) {
+    return request.post('/address/save',params);
+}
+
+
+//删除地址
+export function delSite(id) {
+    return request.post('/address/delete',{id});
+}

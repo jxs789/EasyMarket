@@ -14,19 +14,19 @@ class index extends Component {
         this.state = {
             value: '',
             flag: true,
-            mask: true
+            mask: true,
         };
     }
     componentDidMount() {
         this.props.classify.get_Search()
         this.props.classify.get_Keyword()
     }
-    componentDidUpdate(){
+    componentDidUpdate() {
         // this.props.classify.get_Search()
     }
     render() {
         let { searchData: { defaultKeyword, historyKeywordList, hotKeywordList }, keywordData, goodlistData } = this.props.classify;
-        let { value, flag,mask } = this.state;
+        let { value, flag, mask } = this.state;
         return (
             <div className='wrap'>
                 <header>
@@ -45,8 +45,8 @@ class index extends Component {
                 </header>
                 <section className='seach_count'>
                     {
-                        keywordData && keywordData.length > 0&&flag ?
-                            <div className='show'>
+                        value ?
+                            <div className='show' style={flag ? { display: 'block' } : { display: 'none' }}>
                                 <div className='mask'>
                                     {
                                         keywordData.map((item, index) => (
@@ -72,7 +72,7 @@ class index extends Component {
                                 </div>
                             </div>
                             : <div style={flag ? { display: 'block' } : { display: 'none' }} >
-                                <div className='seach_past' style={mask ? { display: 'block' } : { display: 'none' }}>
+                                <div className='seach_past' style={mask ? { display: 'none' } : { display: 'block' }}>
                                     <ul>
                                         <li>历史记录</li>
                                         <li className='iconfont icon-lajitong' onClick={() => this.del()}></li>
@@ -112,7 +112,7 @@ class index extends Component {
         })
         if (!this.state.value) {
             this.setState({
-                flag:true
+                flag: true
             })
         }
     }
@@ -146,8 +146,9 @@ class index extends Component {
     cancel = () => {
         this.setState({
             value: '',
-            flag:true
+
         })
+        this.props.classify.getGood_data({ keyword: this.state.value })
     }
     //点击热门点击历史
     addKeyword = (value) => {

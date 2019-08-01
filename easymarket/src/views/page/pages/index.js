@@ -6,11 +6,13 @@ import 'swiper/dist/css/swiper.min.css'
 import BrandCont from "../../../components/brandCont/"
 import Swiper from 'swiper'
 import NewGoods from '../../../components/newGoods';
-import HotGoods from "../../../components//hotGoods/"
-import TopGoods from "../../../components//topGoods/";
-import GoodList from "../../../components//goodsList/"
+import HotGoods from "../../../components/hotGoods/"
+import TopGoods from "../../../components/topGoods/";
+import GoodList from "../../../components/goodsList/";
+
 @inject("pages") //注入模块
 @observer   //监听
+
 class page extends Component {
     constructor(props) {
         super(props);
