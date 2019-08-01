@@ -16,6 +16,9 @@ class index extends Component {
     componentDidMount() {
         this.props.my.get_Collect({ typeId: 0, size: 1000 })
     }
+    Del(id) {
+        this.props.my.delcollect(id)
+    }
     render() {
         let { collectData } = this.props.my;
         return (
@@ -32,7 +35,7 @@ class index extends Component {
                                     right={[
                                         {
                                             text: '删除',
-                                            onPress: () => console.log('delete'),
+                                            onPress: () => { this.Del(item.value_id) },
                                             style: { backgroundColor: '#F4333C', color: 'white' },
                                         },
                                     ]}

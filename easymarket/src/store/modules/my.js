@@ -42,6 +42,20 @@ class My {
         this.collectData = arr
         console.log(this.collectData, 2)
     }
+    @action.bound async delcollect(id) {
+        // this.collectData = this.collectData.filter((item) => {
+        //     return item.value_id != id
+        // })
+        let res = this.collectData.findIndex((item) => {
+            return item.value_id === id
+        })
+        console.log(res)
+
+        this.collectData.splice(res, 1)
+
+
+        this.collectData = this.collectData
+    }
 }
 
 export default My;

@@ -13,11 +13,17 @@ export function getAddress() {
 
 //新增地址
 export function addSite(params) {
-    return request.post('/address/save',params);
+    return request.post('/address/save', params);
 }
 
 
 //删除地址
 export function delSite(id) {
-    return request.post('/address/delete',{id});
+    return request.post('/address/delete', { id });
 }
+
+//删除收藏
+export function getcollectDaddordelete({ typeId, valueId }) {
+    return request.post('/collect/addordelete', { typeId, valueId })
+}
+
