@@ -22,11 +22,12 @@
     }
   }
   .classify_count {
+    height: 100%;
     flex: 1;
-    overflow: scroll;
-
+    overflow: hidden;
     .count_small {
       width: 100%;
+      height: 100%;
       display: flex;
       .classify_left {
         width: 28%;
@@ -45,6 +46,7 @@
       .classify_right {
         width: 72%;
         text-align: center;
+        overflow: scroll;
         img {
           height: 2rem;
           position: relative;
@@ -81,7 +83,6 @@
               }
             }
           }
-         
         }
       }
     }

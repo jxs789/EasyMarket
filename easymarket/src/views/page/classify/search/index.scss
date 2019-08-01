@@ -51,12 +51,12 @@
           margin-left: 0.15rem;
           margin-bottom: 0.15rem;
           display: inline-block;
-          border: 1px solid #ccc;
+          border: 0.01rem solid #ccc;
           border-radius: 0.05rem;
           padding: 0.1rem 0.25rem;
         }
         .active {
-          border: 1px solid red;
+          border: 0.01rem solid red;
           color: red;
         }
       }
@@ -90,7 +90,7 @@
       .mask_box {
         p {
           display: inline-block;
-          border: 1px solid #ccc;
+          border: 0.01rem solid #ccc;
           border-radius: 0.05rem;
           padding: 0.1rem 0.25rem;
         }
