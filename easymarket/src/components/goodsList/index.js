@@ -15,7 +15,7 @@ class GoodList extends Component {
                         offSetTop={44}
                         realUrl={list_pic_url}>
                     </ImgLazyLoad>
-                </div><div className="goodsItemName">{name}</div><div className="goodsItemPrice">￥{retail_price}元</div></a>
+                </div><div className="goodsItemName sizeColor">{name}</div><div className="goodsItemPrice">￥{retail_price}元</div></a>
         )
 
     }

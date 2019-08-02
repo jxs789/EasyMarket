@@ -132,9 +132,4 @@ export default class Pages {
         })
 
     }
-    // @action async delete_data({productIds}) {
-    //     let data = 
-    //     // this.collect = data.data
-    // }
-
 }
