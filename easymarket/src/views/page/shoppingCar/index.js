@@ -7,7 +7,7 @@ import Bs from "better-scroll"
 @inject("pages")
 @observer
 class ShoppingCar extends Component {
-    constructor(props) {
+    constructor() {
         super();
         this.state = {
             redact: 0,
