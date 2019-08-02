@@ -44,3 +44,9 @@ export function getCartIndex() {
 export function getcollectDaddordelete({ typeId, valueId }) {
     return request.post('/collect/addordelete', { typeId, valueId })
 }
+//删除购物车数量
+export function del(productIds) {
+    console.log(productIds)
+    return request.post('/cart/delete', { productIds })
+
+}

@@ -1,4 +1,4 @@
-import { getCollect, getAddress, addSite, delSite } from '../../services/index'
+import { getCollect, getAddress, addSite, delSite, getcollectDaddordelete } from '../../services/index'
 import { observable, action } from 'mobx'
 
 class My {
@@ -42,19 +42,14 @@ class My {
         this.collectData = arr
         console.log(this.collectData, 2)
     }
+    //删除收藏
     @action.bound async delcollect(id) {
-        // this.collectData = this.collectData.filter((item) => {
-        //     return item.value_id != id
-        // })
         let res = this.collectData.findIndex((item) => {
             return item.value_id === id
         })
-        console.log(res)
-
         this.collectData.splice(res, 1)
-
-
         this.collectData = this.collectData
+        await getcollectDaddordelete({ typeId: 0, valueId: id })
     }
 }
 

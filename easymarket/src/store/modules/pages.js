@@ -1,5 +1,5 @@
 import { observable, action } from "mobx";
-import { getPage, getClassifyCommodity, getGoodList, getBrandDetail, getgoodsDetail, getGoodsrelated, getCarGoodscount, getCommentList, getCartAdd, getCartIndex, getcollectDaddordelete } from "../../services/index"
+import { getPage, getClassifyCommodity, getGoodList, getBrandDetail, getgoodsDetail, getGoodsrelated, getCarGoodscount, getCommentList, getCartAdd, getCartIndex, getcollectDaddordelete, del } from "../../services/index"
 //修饰   操作
 export default class Pages {
     @observable pageData = [];
@@ -98,6 +98,7 @@ export default class Pages {
 
     //点击编辑到完成视图清楚选中状态
     @action.bound async geteliminate() {
+        console.log(this.caraddcont.cartList)
         this.caraddcont.cartList = this.caraddcont.cartList.map((item) => {
             item.checked = 0
             return item
@@ -117,10 +118,23 @@ export default class Pages {
     }
 
     //删除商品
-    @action.bound async delete(id) {
+    @action.bound async delete() {
+        this.caraddcont.cartList.map((item, index) => {
+            if (item.checked) {
+                console.log(item)
+                console.log(44)
+                del(item.product_id + "")
+            }
+            return item.checked === 0
+        })
         this.caraddcont.cartList = this.caraddcont.cartList.filter((item, index) => {
             return item.checked === 0
         })
+
     }
+    // @action async delete_data({productIds}) {
+    //     let data = 
+    //     // this.collect = data.data
+    // }
 
 }
