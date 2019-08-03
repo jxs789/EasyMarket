@@ -99,7 +99,9 @@ class ShoppingCar extends Component {
                             cartList && cartList.length !== 0 ? cartList.map((item) => {
                                 return (
                                     <div className="cartItem" key={item.goods_id} >
-                                        <IscheckItem {...this.props} iFlag={item.checked} click={this.highlight.bind(this, item.goods_id)} />
+                                        <IscheckItem {...this.props} 
+                                        iFlag={item.checked} 
+                                        click={this.highlight.bind(this, item.goods_id)} />
                                         <div className="goodsImg" onClick={() => this.gotoDetail(item.goods_id)}>
                                             <img src={item.list_pic_url} alt="" />
                                         </div>

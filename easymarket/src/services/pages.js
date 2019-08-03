@@ -47,5 +47,8 @@ export function getcollectDaddordelete({ typeId, valueId }) {
 //删除购物车数量
 export function delCarNum(productIds) {
     return request.post('/cart/delete', { productIds })
-
+}
+//修改购物车数量
+export function cartupdate({ goodsId, id, number, productId }) {
+    return request.post('/cart/update', { goodsId, id, number, productId })
 }

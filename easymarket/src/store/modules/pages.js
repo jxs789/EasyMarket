@@ -1,5 +1,5 @@
 import { observable, action } from "mobx";
-import { getPage, getClassifyCommodity, getGoodList, getBrandDetail, getgoodsDetail, getGoodsrelated, getCarGoodscount, getCommentList, getCartAdd, getCartIndex, getcollectDaddordelete, delCarNum } from "../../services/index"
+import { getPage, getClassifyCommodity, getGoodList, getBrandDetail, getgoodsDetail, getGoodsrelated, getCarGoodscount, getCommentList, getCartAdd, getCartIndex, getcollectDaddordelete, delCarNum, cartupdate } from "../../services/index"
 //修饰   操作
 export default class Pages {
     @observable pageData = [];
@@ -102,18 +102,22 @@ export default class Pages {
             item.checked = 0
             return item
         })
+
     }
 
     //商品数加加减减
     @action.bound async getCalculate(id, compute) {
         let inde = this.caraddcont.cartList.findIndex((item) => {
+            console.log(item)
+
             return item.goods_id === id
         })
         if (this.caraddcont.cartList[inde].number === 0) {
             return
         }
-        this.caraddcont.cartList[inde].number += compute
 
+        cartupdate({ goodsId: this.caraddcont.cartList[inde].goods_id, id: this.caraddcont.cartList[inde].id, number: this.caraddcont.cartList[inde].number + compute, productId: this.caraddcont.cartList[inde].product_id })
+        this.caraddcont.cartList[inde].number += compute
     }
 
     //删除商品
@@ -127,6 +131,6 @@ export default class Pages {
         this.caraddcont.cartList = this.caraddcont.cartList.filter((item, index) => {
             return item.checked === 0
         })
-
     }
+
 }
