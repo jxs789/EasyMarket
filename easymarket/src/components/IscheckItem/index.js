@@ -8,7 +8,6 @@ class IsCheckItem extends Component {
         let { iFlag } = this.props
         // console.log(this.props)
         return (
-
             <div className="isCheckItem" onClick={this.props.click}>
                 <div>
                     <img src={iFlag == 1 ? isCheck : noCheck} alt="" />
