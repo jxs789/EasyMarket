@@ -9,7 +9,6 @@ import NewGoods from '../../../components/newGoods';
 import HotGoods from "../../../components/hotGoods"
 import TopGoods from "../../../components/topGoods";
 import GoodList from "../../../components/goodsList";
-
 @inject("pages") //注入模块
 @observer   //监听
 

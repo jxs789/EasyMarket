@@ -179,34 +179,6 @@
   width: 100%;
 }
 
-.bcColor .topGoodsBox .slide .topGoodsItem {
-  height: 6rem;
-}
-
-.bcColor .topGoodsBox .slide .topGoodsItem .imgLazyload {
-  height: 4rem;
-  width: 100%;
-}
-
-.bcColor .topGoodsBox .slide .topGoodsItem .topGoodSubTitle {
-  margin-top: 0.1rem;
-  height: 0.4rem;
-  line-height: 0.4rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.bcColor .topGoodsBox .slide .topGoodsItem .topGoodSubTitle .topGoodPrice {
-  color: darkred;
-}
-
-.bcColor .topGoodsBox .slide .topGoodsItem .topGoodsTitle {
-  color: gray;
-  text-align: left;
-  font-size: 0.24rem;
-}
-
 .bcColor .cateGoryBox {
   height: auto;
 }
@@ -225,6 +197,10 @@
   flex-wrap: wrap;
   flex-shrink: 0;
   width: 100%;
+}
+
+.bcColor .cateGoryBox a {
+  color: #000;
 }
 
 .bcColor .cateGoryBox .categoryMoreGoods {

@@ -146,10 +146,10 @@ class Goods extends Component {
                                 <div className='goodsCommentTitle'>
                                     <div>评论（{comment && comment.count}）</div>
                                     <div>
-                                        <a href={`/allcomment/${info && info.id}?typeId=0`}>
+                                        <div onClick={() => this.props.history.push(`/allcomment/${info && info.id}?typeId=0`)}>
                                             查看全部
                                     <i className='iconfont icon-angle-right'></i>
-                                        </a>
+                                        </div>
                                     </div>
                                 </div>
                                 {/**

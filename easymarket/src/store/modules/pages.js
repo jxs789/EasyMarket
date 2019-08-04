@@ -108,12 +108,11 @@ export default class Pages {
     //商品数加加减减
     @action.bound async getCalculate(id, compute) {
         let inde = this.caraddcont.cartList.findIndex((item) => {
-            console.log(item)
-
             return item.goods_id === id
         })
-        if (this.caraddcont.cartList[inde].number === 0) {
-            return
+        if (this.caraddcont.cartList[inde].number === 1 && compute == -1) {
+
+            alert("该宝贝不能再减了")
         }
 
         cartupdate({ goodsId: this.caraddcont.cartList[inde].goods_id, id: this.caraddcont.cartList[inde].id, number: this.caraddcont.cartList[inde].number + compute, productId: this.caraddcont.cartList[inde].product_id })
