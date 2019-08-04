@@ -4,7 +4,7 @@ import App from './views/index';
 import { Provider } from "mobx-react";
 import Store from "./store"
 import './views/page/home/index.scss'
-import "../src/fonts/iconfont.css"
+import "./fonts/iconfont.css"
 import './iconfont/iconfont.css'
 import 'antd-mobile/dist/antd-mobile.css';
 
